@@ -1,0 +1,39 @@
+@import "../../assets/styles/variables.scss";
+
+.custom-button-group {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+
+  .custom-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: 2px solid $primary-color !important;
+    color: $primary-color !important;
+    background-color: transparent;
+    transition: all 0.3s ease;
+    padding: 0.5rem 1.2rem;
+    border-radius: 15px;
+
+    svg {
+      font-size: 1.2rem;
+      color: $primary-color;
+      transition: color 0.3s ease;
+    }
+
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+      background-color: $primary-color;
+      color: white !important;
+      border-color: $primary-color;
+
+      svg {
+        color: white;
+      }
+    }
+  }
+}

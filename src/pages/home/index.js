@@ -1,0 +1,106 @@
+import NavScrollExample from "../../layout/navbar/index";
+import CustomButton from "../../components/button/index";
+import {
+  FaBagShopping,
+  FaShop,
+  FaHeart,
+  FaCakeCandles,
+  FaRing,
+  FaTree,
+} from "react-icons/fa6";
+
+import "./style.scss";
+import HeroBanner from "../../components/banner/index";
+import CateCard from "../../components/cateCard/index";
+import FeaturedCard from "../../components/featuredCard";
+
+const categoryData = [
+  {
+    icon: FaHeart,
+    name: "Wedding",
+    description: "Beautiful gift boxes for the perfect wedding celebrations.",
+  },
+  {
+    icon: FaCakeCandles,
+    name: "Birthday",
+    description: "Make birthdays unforgettable with our special collections.",
+  },
+  {
+    icon: FaRing,
+    name: "Anniversary",
+    description: "Celebrate love with our romantic anniversary boxes.",
+  },
+  {
+    icon: FaTree,
+    name: "Christmas",
+    description: "Spread holiday joy with festive gift collections.",
+  },
+];
+
+const productData = [
+  {
+    id: 1,
+    title: "Premium Wedding Gift Box",
+    image: "/images/wedding-box.jpg",
+    originalPrice: 89.99,
+    discountedPrice: 89.99,
+    rating: 5,
+    reviews: 127,
+  },
+  {
+    id: 2,
+    title: "Birthday Deluxe Collection",
+    image: "/images/birthday-box.jpg",
+    originalPrice: 65.99,
+    discountedPrice: 59.39,
+    rating: 4,
+    reviews: 89,
+  },
+  {
+    id: 3,
+    title: "Romantic Anniversary Set",
+    image: "/images/anniversary-box.jpg",
+    originalPrice: 75.5,
+    discountedPrice: 64.17,
+    rating: 4,
+    reviews: 156,
+  },
+  {
+    id: 4,
+    title: "Festive Christmas Collection",
+    image: "/images/christmas-box.jpg",
+    originalPrice: 95.0,
+    discountedPrice: 76.0,
+    rating: 4,
+    reviews: 203,
+  },
+];
+
+const Home = () => {
+  return (
+    <>
+      <NavScrollExample />
+      <div className="custom-button-group">
+        <CustomButton
+          className="custom-btn"
+          icon={FaBagShopping}
+          variant="solid"
+        >
+          Buyer
+        </CustomButton>
+        <CustomButton className="custom-btn" icon={FaShop} variant="outline">
+          Seller
+        </CustomButton>
+      </div>
+      <HeroBanner
+        title="Premium Gift Boxes"
+        description="Curated with love for every special occasion"
+        buttonLabel="Shop Now"
+      />
+      <CateCard title="Shop by Occasion" categories={categoryData} />;
+      <FeaturedCard products={productData} />
+    </>
+  );
+};
+
+export default Home;
