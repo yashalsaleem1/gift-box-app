@@ -1,0 +1,78 @@
+@import "../../assets/styles/variables.scss";
+
+.featured-section {
+  margin: 3rem 2rem;
+
+  .section-heading {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #333333;
+  }
+
+  .featured-card-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+  }
+
+  .featured-card {
+    width: 22rem;
+    height: 17rem;
+    border: 2px solid transparent;
+    border-radius: $card-radius;
+    box-shadow: $shadow-default;
+    overflow: hidden;
+    text-align: center;
+    background-color: #fff;
+    padding: 1.5rem 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+
+    .price-info {
+      margin: 1rem 0;
+
+      .discounted {
+        color: $primary-color;
+        font-weight: bold;
+        font-size: 1.6rem;
+      }
+
+      .original {
+        text-decoration: line-through;
+        margin-right: 0.39rem;
+        font-weight: bold;
+        color: gray;
+        gap: 1.5%;
+      }
+
+      .off {
+        color: green;
+        margin-left: 0.5rem;
+        font-weight: bold;
+      }
+    }
+
+    .rating {
+      margin-bottom: 1rem;
+
+      svg {
+        font-size: 1rem;
+        margin-right: 0.1rem;
+      }
+
+      .reviews {
+        margin-left: 0.5rem;
+        color: #888;
+        font-size: 0.85rem;
+      }
+    }
+
+    .add-btn {
+      width: 100%;
+      font-weight: $font-semibold;
+      background-color: $primary-color;
+      color: $text-light;
+    }
+  }
+}
