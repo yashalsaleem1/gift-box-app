@@ -1,0 +1,48 @@
+@import "../../assets/styles/variables.scss";
+.info-heading {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333333;
+  margin-top: 2rem;
+}
+
+.info-card-group {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 2rem 1rem;
+}
+
+.info-card {
+  width: 17rem;
+  height: 12rem;
+  border: 2px solid transparent;
+  border-radius: $card-radius;
+  box-shadow: $shadow-default;
+  overflow: hidden;
+  text-align: center;
+  background-color: #fff;
+  padding: 1.5rem 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+
+  .icon {
+    font-size: 2.2rem;
+    color: $primary-color;
+    margin-bottom: 1rem;
+  }
+
+  .card-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: $cate-heading;
+    margin-bottom: 1rem;
+  }
+
+  .card-text {
+    font-size: 0.95rem;
+    color: $cate-content;
+    line-height: 1.4;
+  }
+}

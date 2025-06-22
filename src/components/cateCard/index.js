@@ -1,7 +1,7 @@
 import Card from "react-bootstrap/Card";
 import "./style.scss";
 
-function cateCard({ title = "Shop by Occasion", categories = [] }) {
+function CateCard({ title = "Shop by Occasion", categories = [] }) {
   return (
     <div className="category-section">
       <h2 className="category-heading">{title}</h2>
@@ -23,4 +23,4 @@ function cateCard({ title = "Shop by Occasion", categories = [] }) {
   );
 }
 
-export default cateCard;
+export default CateCard;
