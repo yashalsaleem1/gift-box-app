@@ -20,12 +20,6 @@
       width: 50px;
       height: 30px;
     }
-
-    span {
-      color: $primary-color;
-      font-weight: bold;
-      font-size: 1.5rem;
-    }
   }
 
   .custom-collapse {
@@ -47,7 +41,7 @@
       font-size: 1rem;
 
       &:hover {
-        color: $primary-color;
+        color: $primary-color !important;
       }
     }
   }
@@ -103,10 +97,11 @@
     .profile-icon {
       font-size: 1.6rem;
       color: $text-dark;
+      font-weight: 100;
       cursor: pointer;
 
       &:hover {
-        color: darken($text-dark, 10%);
+        color: $primary-color !important;
       }
     }
   }
