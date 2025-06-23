@@ -1,0 +1,69 @@
+@import "../../assets/styles/variables.scss";
+
+.control-card-group {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 2rem 1rem;
+  align-items: stretch;
+}
+
+.control-card {
+  width: 22rem;
+  border: 2px solid transparent;
+  border-radius: $card-radius;
+  box-shadow: $shadow-default;
+  overflow: hidden;
+  text-align: center;
+  background-color: $text-light;
+  padding: 1.5rem 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: $shadow-default;
+    border-color: $primary-color;
+  }
+
+  .icon {
+    font-size: 4rem;
+    color: $primary-color;
+    margin-bottom: 1rem;
+  }
+
+  .card-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: $cate-heading;
+    margin-bottom: 1rem;
+  }
+
+  .card-text {
+    font-size: 0.95rem;
+    color: $cate-content;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+  }
+
+  .control-btn {
+    margin-top: 3rem;
+    background-color: $primary-color !important;
+    color: $text-light !important;
+    border: none;
+    padding: 0.5rem 1.25rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+  }
+  &.active-btn {
+    background-color: $primary-color;
+    color: $text-light !important;
+    border-color: $primary-color;
+
+    svg {
+      color: white;
+    }
+  }
+}

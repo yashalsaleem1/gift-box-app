@@ -23,12 +23,9 @@
       transition: color 0.3s ease;
     }
 
-    &:hover,
-    &:focus,
-    &:active,
-    &.active {
+    &.active-btn {
       background-color: $primary-color;
-      color: white !important;
+      color: $text-light !important;
       border-color: $primary-color;
 
       svg {

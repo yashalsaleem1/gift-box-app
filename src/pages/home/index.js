@@ -1,3 +1,4 @@
+import { useNavigate, useLocation } from "react-router-dom";
 import NavScrollExample from "../../layout/navbar/index";
 import CustomButton from "../../components/button/index";
 import {
@@ -77,18 +78,29 @@ const productData = [
 ];
 
 const Home = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const isSellerActive = location.pathname === "/seller";
+
   return (
     <>
       <NavScrollExample />
       <div className="custom-button-group">
         <CustomButton
-          className="custom-btn"
+          className={`custom-btn ${!isSellerActive ? "active-btn" : ""}`}
           icon={FaBagShopping}
           variant="solid"
+          onClick={() => navigate("/")}
         >
           Buyer
         </CustomButton>
-        <CustomButton className="custom-btn" icon={FaShop} variant="outline">
+
+        <CustomButton
+          className={`custom-btn ${isSellerActive ? "active-btn" : ""}`}
+          icon={FaShop}
+          variant="outline"
+          onClick={() => navigate("/seller")}
+        >
           Seller
         </CustomButton>
       </div>
