@@ -1,5 +1,4 @@
-import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import NavScrollExample from "../../layout/navbar";
 import InfoCard from "../../components/sellerInfoCard";
 import CustomButton from "../../components/button";
@@ -67,7 +66,8 @@ const controlData = [
 
 const SellerDashboard = () => {
   const navigate = useNavigate();
-  const [activeRole, setActiveRole] = useState("seller");
+  const location = useLocation();
+  const isSellerActive = location.pathname === "/seller";
 
   return (
     <div>
@@ -75,27 +75,19 @@ const SellerDashboard = () => {
 
       <div className="custom-button-group">
         <CustomButton
-          className={`custom-btn ${activeRole === "buyer" ? "active-btn" : ""}`}
+          className={`custom-btn ${!isSellerActive ? "active-btn" : ""}`}
           icon={FaBagShopping}
           variant="solid"
-          onClick={() => {
-            setActiveRole("buyer");
-            navigate("/");
-          }}
+          onClick={() => navigate("/")}
         >
           Buyer
         </CustomButton>
 
         <CustomButton
-          className={`custom-btn ${
-            activeRole === "seller" ? "active-btn" : ""
-          }`}
+          className={`custom-btn ${isSellerActive ? "active-btn" : ""}`}
           icon={FaShop}
           variant="outline"
-          onClick={() => {
-            setActiveRole("seller");
-            navigate("/seller");
-          }}
+          onClick={() => navigate("/seller")}
         >
           Seller
         </CustomButton>
