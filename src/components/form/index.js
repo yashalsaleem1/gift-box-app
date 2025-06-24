@@ -1,43 +1,38 @@
 import Form from "react-bootstrap/Form";
-import { Button } from "react-bootstrap";
-import "./style.scss";
 
-function FormGroupExample({ title = "Customer Reviews" }) {
-  return (
-    <div className="review-form-container">
-      <h2 className="section-heading">{title}</h2>
-
-      <Form>
-        <Form.Group controlId="formProduct">
-          <Form.Label>Product</Form.Label>
-          <Form.Select defaultValue="Select a product">
-            <option disabled>Select a product</option>
-            <option>Premium Wedding Gift Box</option>
-            <option>Birthday Deluxe Collection</option>
+function FormInput({ type = "text", label = "", options = [], ...props }) {
+  switch (type) {
+    case "select":
+      return (
+        <Form.Group controlId={props.id || label}>
+          <Form.Label>{label}</Form.Label>
+          <Form.Select {...props}>
+            <option disabled>{props.placeholder || `Select ${label}`}</option>
+            {options.map((option, index) => (
+              <option key={index} value={option}>
+                {option}
+              </option>
+            ))}
           </Form.Select>
         </Form.Group>
+      );
 
-        <Form.Group controlId="formRating">
-          <Form.Label>Select Rating</Form.Label>
-          <Form.Select defaultValue="Select rating">
-            <option disabled>Select rating</option>
-            <option>★★★★★ (5 stars)</option>
-            <option>★★★★☆ (4 stars)</option>
-            <option>★★★☆☆ (3 stars)</option>
-            <option>★★☆☆☆ (2 stars)</option>
-            <option>★☆☆☆☆ (1 star)</option>
-          </Form.Select>
+    case "textarea":
+      return (
+        <Form.Group controlId={props.id || label}>
+          <Form.Label>{label}</Form.Label>
+          <Form.Control as="textarea" rows={3} {...props} />
         </Form.Group>
+      );
 
-        <Form.Group controlId="formReviewText" className="mb-3">
-          <Form.Label>Your Review</Form.Label>
-          <Form.Control as="textarea" />
+    default:
+      return (
+        <Form.Group controlId={props.id || label}>
+          <Form.Label>{label}</Form.Label>
+          <Form.Control type={type} {...props} />
         </Form.Group>
-
-        <Button className="add-btn">Submit Review</Button>
-      </Form>
-    </div>
-  );
+      );
+  }
 }
 
-export default FormGroupExample;
+export default FormInput;

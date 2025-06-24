@@ -1,12 +1,13 @@
 import { useNavigate, useLocation } from "react-router-dom";
 import NavScrollExample from "../../layout/navbar";
 import CustomButton from "../../components/button/index";
-import FormGroupExample from "../../components/form";
+import Form from "react-bootstrap/Form";
+import FormInput from "../../components/form";
 import ReviewCard from "../../components/reviewCard";
 import { FaBagShopping, FaShop } from "react-icons/fa6";
 import "./style.scss";
 
-const ReviewPage = () => {
+const ReviewPage = ({ title = "Customer Reviews" }) => {
   const navigate = useNavigate();
   const location = useLocation();
   const isSellerActive = location.pathname === "/seller";
@@ -33,7 +34,39 @@ const ReviewPage = () => {
           Seller
         </CustomButton>
       </div>
-      <FormGroupExample title="Customer Reviews" />
+      <div className="review-form-container">
+        <h2 className="section-heading">{title}</h2>
+
+        <Form>
+          <FormInput
+            type="select"
+            label="Product"
+            options={["Premium Wedding Gift Box", "Birthday Deluxe Collection"]}
+            placeholder="Select a product"
+          />
+
+          <FormInput
+            type="select"
+            label="Rating"
+            options={[
+              "★★★★★ (5 stars)",
+              "★★★★☆ (4 stars)",
+              "★★★☆☆ (3 stars)",
+              "★★☆☆☆ (2 stars)",
+              "★☆☆☆☆ (1 star)",
+            ]}
+            placeholder="Select rating"
+          />
+
+          <FormInput
+            type="textarea"
+            label="Your Review"
+            placeholder="Write your thoughts..."
+          />
+
+          <CustomButton className="add-btn">Submit Review</CustomButton>
+        </Form>
+      </div>
 
       <div className="review-section-container">
         <h4 className="review-section-title">All Reviews</h4>
