@@ -1,6 +1,9 @@
 import { useNavigate, useLocation } from "react-router-dom";
 import NavScrollExample from "../../layout/navbar/index";
 import CustomButton from "../../components/button/index";
+import HeroBanner from "../../components/banner/index";
+import CateCard from "../../components/cateCard/index";
+import FeaturedCard from "../../components/featuredCard";
 import {
   FaBagShopping,
   FaShop,
@@ -9,11 +12,6 @@ import {
   FaRing,
   FaTree,
 } from "react-icons/fa6";
-
-import "./style.scss";
-import HeroBanner from "../../components/banner/index";
-import CateCard from "../../components/cateCard/index";
-import FeaturedCard from "../../components/featuredCard";
 
 const categoryData = [
   {
