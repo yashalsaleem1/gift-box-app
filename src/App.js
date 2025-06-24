@@ -4,6 +4,7 @@ import Home from "./pages/home";
 import SellerDashboard from "./pages/sellerDashboard";
 import CategoryPage from "./pages/category";
 import DealsPage from "./pages/deals";
+import ReviewPage from "./pages/review";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/seller" element={<SellerDashboard />} />
         <Route path="/category" element={<CategoryPage />} />
         <Route path="/deals" element={<DealsPage />} />
+        <Route path="/reviews" element={<ReviewPage />} />
       </Routes>
     </Router>
   );
