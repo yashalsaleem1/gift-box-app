@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import Home from "./pages/home";
 import SellerDashboard from "./pages/sellerDashboard";
 import CategoryPage from "./pages/category";
+import DealsPage from "./pages/deals";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/seller" element={<SellerDashboard />} />
         <Route path="/category" element={<CategoryPage />} />
+        <Route path="/deals" element={<DealsPage />} />
       </Routes>
     </Router>
   );

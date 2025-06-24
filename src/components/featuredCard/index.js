@@ -19,10 +19,10 @@ const renderStars = (rating) => {
   return stars;
 };
 
-function FeaturedCard({ products = [] }) {
+function FeaturedCard({ title = "", products = [] }) {
   return (
     <div className="featured-section">
-      <h2 className="section-heading">Featured Products</h2>
+      <h2 className="section-heading">{title}</h2>
 
       <div className="featured-card-group">
         {products.map((product, idx) => {
