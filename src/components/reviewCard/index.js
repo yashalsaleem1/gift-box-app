@@ -16,7 +16,7 @@ const renderStars = (rating) => {
   return stars;
 };
 
-const ReviewCard = ({ title, rating, name, review, date }) => {
+const ReviewCard = ({ title, rating, name, feedback, date }) => {
   return (
     <div className="review-card">
       <div className="review-header">
@@ -25,7 +25,7 @@ const ReviewCard = ({ title, rating, name, review, date }) => {
         <span className="reviewer-name">{name}</span>
         <span className="review-date">{date}</span>
       </div>
-      <div className="review-body">{review}</div>
+      <div className="review-body">{feedback}</div>
     </div>
   );
 };

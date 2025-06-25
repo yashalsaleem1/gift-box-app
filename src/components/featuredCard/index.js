@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import DiscountBadge from "../badge";
@@ -19,7 +20,9 @@ const renderStars = (rating) => {
   return stars;
 };
 
-function FeaturedCard({ title = "", products = [] }) {
+function FeaturedCard({ title = "", products = [], productLink }) {
+  const navigate = useNavigate();
+
   return (
     <div className="featured-section">
       <h2 className="section-heading">{title}</h2>
@@ -33,7 +36,11 @@ function FeaturedCard({ title = "", products = [] }) {
           );
 
           return (
-            <Card className="featured-card" key={idx}>
+            <Card
+              className="featured-card"
+              key={idx}
+              onClick={() => navigate(`/product/${product.id}`)}
+            >
               <Card.Img variant="top" src={product.image} alt={product.title} />
 
               <Card.Body>

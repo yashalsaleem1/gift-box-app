@@ -106,6 +106,7 @@ const Home = () => {
         title="Premium Gift Boxes"
         description="Curated with love for every special occasion"
         buttonLabel="Shop Now"
+        buttonLink="/category"
       />
       <CateCard title="Shop by Occasion" categories={categoryData} />;
       <FeaturedCard title="Featured Products" products={productData} />

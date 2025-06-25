@@ -8,7 +8,7 @@ const allProducts = [
   {
     id: 1,
     title: "Premium Wedding Gift Box",
-    image: "/images/wedding-box.jpg",
+    image: "../../assets/images/gift-image.png",
     originalPrice: 89.99,
     discountedPrice: 89.99,
     rating: 5,
@@ -17,7 +17,7 @@ const allProducts = [
   {
     id: 2,
     title: "Birthday Deluxe Collection",
-    image: "/images/birthday-box.jpg",
+    image: "../../assets/images/gift-image.png",
     originalPrice: 65.99,
     discountedPrice: 59.39,
     rating: 4,
@@ -26,7 +26,7 @@ const allProducts = [
   {
     id: 3,
     title: "Romantic Anniversary Set",
-    image: "/images/anniversary-box.jpg",
+    image: "../../assets/images/gift-image.png",
     originalPrice: 75.5,
     discountedPrice: 64.17,
     rating: 4,
@@ -35,7 +35,7 @@ const allProducts = [
   {
     id: 4,
     title: "Festive Christmas Collection",
-    image: "/images/christmas-box.jpg",
+    image: "../../assets/images/gift-image.png",
     originalPrice: 95.0,
     discountedPrice: 76.0,
     rating: 4,
