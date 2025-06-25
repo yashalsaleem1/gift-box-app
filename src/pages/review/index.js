@@ -76,7 +76,7 @@ const ReviewPage = ({ title = "Customer Reviews" }) => {
           rating={5}
           name="Sarah M."
           date="2024-01-15"
-          review="Absolutely beautiful! Perfect for our wedding guests."
+          feedback="Absolutely beautiful! Perfect for our wedding guests."
         />
 
         <ReviewCard
@@ -84,7 +84,7 @@ const ReviewPage = ({ title = "Customer Reviews" }) => {
           rating={4}
           name="Mike R."
           date="2024-01-10"
-          review="Great quality items, kids loved it!"
+          feedback="Great quality items, kids loved it!"
         />
 
         <ReviewCard
@@ -92,7 +92,7 @@ const ReviewPage = ({ title = "Customer Reviews" }) => {
           rating={5}
           name="Jennifer L."
           date="2024-01-12"
-          review="Exceeded expectations! Beautiful packaging and quality items."
+          feedback="Exceeded expectations! Beautiful packaging and quality items."
         />
 
         <ReviewCard
@@ -100,7 +100,7 @@ const ReviewPage = ({ title = "Customer Reviews" }) => {
           rating={5}
           name="David K."
           date="2024-01-08"
-          review="Perfect romantic touch for our anniversary celebration."
+          feedback="Perfect romantic touch for our anniversary celebration."
         />
 
         <ReviewCard
@@ -108,7 +108,7 @@ const ReviewPage = ({ title = "Customer Reviews" }) => {
           rating={4}
           name="Mary T."
           date="2024-01-05"
-          review="Great holiday spirit in this box!"
+          feedback="Great holiday spirit in this box!"
         />
       </div>
     </>
