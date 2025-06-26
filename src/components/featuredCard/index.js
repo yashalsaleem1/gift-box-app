@@ -1,8 +1,10 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import DiscountBadge from "../badge";
+import { useCart } from "../../pages/context/index";
 import { FaStar, FaStarHalfAlt, FaRegStar } from "react-icons/fa";
 import "./style.scss";
 
@@ -22,6 +24,7 @@ const renderStars = (rating) => {
 
 function FeaturedCard({ title = "", products = [], productLink }) {
   const navigate = useNavigate();
+  const { addToCart } = useCart();
 
   return (
     <div className="featured-section">
@@ -41,11 +44,15 @@ function FeaturedCard({ title = "", products = [], productLink }) {
               key={idx}
               onClick={() => navigate(`/product/${product.id}`)}
             >
-              <Card.Img variant="top" src={product.image} alt={product.title} />
+              <Card.Img
+                variant="top"
+                src={product.image}
+                alt={product.title}
+                className="product-img"
+              />
 
               <Card.Body>
                 <Card.Title>{product.title}</Card.Title>
-
                 <div className="price-info">
                   {product.discountedPrice < product.originalPrice ? (
                     <>
@@ -66,13 +73,19 @@ function FeaturedCard({ title = "", products = [], productLink }) {
                     </span>
                   )}
                 </div>
-
                 <div className="rating">
                   {renderStars(product.rating)}
                   <span className="reviews">({product.reviews} reviews)</span>
                 </div>
-
-                <Button variant="warning" className="add-btn">
+                <Button
+                  variant="warning"
+                  className="add-btn"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    addToCart(product); // send product to cart
+                    toast.success("Added to cart!");
+                  }}
+                >
                   Add to Cart
                 </Button>
               </Card.Body>

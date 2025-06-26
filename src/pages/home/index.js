@@ -4,6 +4,7 @@ import CustomButton from "../../components/button/index";
 import HeroBanner from "../../components/banner/index";
 import CateCard from "../../components/cateCard/index";
 import FeaturedCard from "../../components/featuredCard";
+import productData from "../productData";
 import {
   FaBagShopping,
   FaShop,
@@ -33,45 +34,6 @@ const categoryData = [
     icon: FaTree,
     name: "Christmas",
     description: "Spread holiday joy with festive gift collections.",
-  },
-];
-
-const productData = [
-  {
-    id: 1,
-    title: "Premium Wedding Gift Box",
-    image: "/images/wedding-box.jpg",
-    originalPrice: 89.99,
-    discountedPrice: 89.99,
-    rating: 5,
-    reviews: 127,
-  },
-  {
-    id: 2,
-    title: "Birthday Deluxe Collection",
-    image: "/images/birthday-box.jpg",
-    originalPrice: 65.99,
-    discountedPrice: 59.39,
-    rating: 4,
-    reviews: 89,
-  },
-  {
-    id: 3,
-    title: "Romantic Anniversary Set",
-    image: "/images/anniversary-box.jpg",
-    originalPrice: 75.5,
-    discountedPrice: 64.17,
-    rating: 4,
-    reviews: 156,
-  },
-  {
-    id: 4,
-    title: "Festive Christmas Collection",
-    image: "/images/christmas-box.jpg",
-    originalPrice: 95.0,
-    discountedPrice: 76.0,
-    rating: 4,
-    reviews: 203,
   },
 ];
 

@@ -1,0 +1,97 @@
+@import "../../assets/styles/variables.scss";
+
+.shopping-cart-page {
+  h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #333333;
+    margin: 2rem 3rem;
+  }
+
+  p {
+    text-align: center;
+    font-weight: 500;
+    font-size: 1.5rem;
+  }
+
+  .cart-card {
+    background: $text-light;
+    padding: 1rem 1.25rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.253);
+    position: relative;
+    max-width: 90%;
+    margin: 2rem auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1.5rem;
+
+    img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .checkout-btn {
+      background-color: $hero-color;
+      color: #000;
+      border: none;
+      border-radius: 30px;
+      padding: 0.8rem 2rem;
+      font-size: 1rem;
+      font-weight: 500;
+      gap: 0.5rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-left: auto;
+    }
+    h3 {
+      font-size: 1.5rem;
+    }
+    .cart-info {
+      h4 {
+        flex: 1;
+        display: flex;
+        flex-direction: row;
+      }
+
+      p {
+        flex: 1;
+        display: flex;
+        flex-direction: row;
+      }
+    }
+
+    .price {
+      color: $primary-color;
+      font-weight: 700;
+    }
+  }
+  .quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-left: auto;
+
+    button {
+      border-color: gray;
+      border-radius: 0.2rem;
+    }
+
+    span {
+      font-weight: bold;
+      font-size: 1.3rem;
+    }
+  }
+  .delete-btn {
+    background-color: $primary-color;
+    color: $text-light;
+    border: none;
+    border-radius: 2px;
+    font-size: 0.9rem;
+    cursor: pointer;
+  }
+}

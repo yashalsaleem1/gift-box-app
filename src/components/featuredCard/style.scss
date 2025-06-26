@@ -16,19 +16,29 @@
     flex-wrap: wrap;
     gap: 2rem;
     justify-content: center;
+    padding: 1rem 1rem;
   }
 
   .featured-card {
-    width: 22rem;
-    height: 17rem;
+    width: 30%;
     border: 2px solid transparent;
     border-radius: $card-radius;
     box-shadow: $shadow-default;
     overflow: hidden;
-    text-align: center;
     background-color: #fff;
     padding: 1.5rem 1rem;
     transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+
+    img {
+      height: 200px;
+      width: 100%;
+      object-fit: cover;
+      border-bottom: 1px solid #eee;
+    }
+
+    .featured-card .card-body {
+      padding: 1rem;
+    }
 
     .price-info {
       margin: 1rem 0;
