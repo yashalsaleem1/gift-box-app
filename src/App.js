@@ -6,19 +6,27 @@ import CategoryPage from "./pages/category";
 import DealsPage from "./pages/deals";
 import ReviewPage from "./pages/review";
 import ItemDescription from "./pages/itemDescription";
+import ShoppingCart from "./pages/cart";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { CartProvider } from "./pages/context";
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/seller" element={<SellerDashboard />} />
-        <Route path="/category" element={<CategoryPage />} />
-        <Route path="/deals" element={<DealsPage />} />
-        <Route path="/reviews" element={<ReviewPage />} />
-        <Route path="/product/:id" element={<ItemDescription />} />
-      </Routes>
-    </Router>
+    <CartProvider>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/seller" element={<SellerDashboard />} />
+          <Route path="/category" element={<CategoryPage />} />
+          <Route path="/deals" element={<DealsPage />} />
+          <Route path="/reviews" element={<ReviewPage />} />
+          <Route path="/product/:id" element={<ItemDescription />} />
+          <Route path="/cart" element={<ShoppingCart />} />
+        </Routes>
+      </Router>
+      <ToastContainer position="top-right" />
+    </CartProvider>
   );
 }
 
