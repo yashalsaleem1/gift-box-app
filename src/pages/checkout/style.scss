@@ -1,0 +1,28 @@
+@import "../../assets/styles/variables.scss";
+
+.checkout-form-container {
+  max-width: 50%;
+  margin: 4rem auto;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.185);
+
+  .section-heading {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #333333;
+    margin-bottom: 3rem;
+  }
+}
+.add-btn {
+  width: 100%;
+  font-weight: bold;
+  background-color: $primary-color;
+  color: $text-light;
+  display: inline-block;
+  align-items: center;
+  margin-top: 1rem;
+  font-size: large;
+}
