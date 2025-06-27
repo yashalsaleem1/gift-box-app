@@ -1,4 +1,5 @@
 import { useCart } from "../context";
+import { useNavigate } from "react-router-dom";
 import CustomButton from "../../components/button/index";
 import NavScrollExample from "../../layout/navbar/index";
 import { FaTrash } from "react-icons/fa6";
@@ -6,6 +7,7 @@ import "./style.scss";
 
 const ShoppingCart = () => {
   const { cart, setCart } = useCart();
+  const navigate = useNavigate();
 
   const increaseQty = (id) => {
     setCart((prev) =>
@@ -71,7 +73,7 @@ const ShoppingCart = () => {
               <CustomButton
                 variant="solid"
                 className="checkout-btn"
-                onClick={() => alert("Proceeding to checkout...")}
+                onClick={() => navigate("/checkout")}
               >
                 Proceed to Checkout →
               </CustomButton>

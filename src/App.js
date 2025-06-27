@@ -10,6 +10,7 @@ import ShoppingCart from "./pages/cart";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { CartProvider } from "./pages/context";
+import CheckoutPage from "./pages/checkout";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="/reviews" element={<ReviewPage />} />
           <Route path="/product/:id" element={<ItemDescription />} />
           <Route path="/cart" element={<ShoppingCart />} />
+          <Route path="/checkout" element={<CheckoutPage />} />
         </Routes>
       </Router>
       <ToastContainer position="top-right" />
