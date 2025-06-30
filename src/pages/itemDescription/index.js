@@ -1,10 +1,12 @@
-import { useNavigate, useLocation } from "react-router-dom";
 import NavScrollExample from "../../layout/navbar/index";
+import { useNavigate } from "react-router-dom";
+import { Button } from "react-bootstrap";
 import CustomButton from "../../components/button/index";
+import { useCart } from "../../pages/context/index";
+import { toast } from "react-toastify";
 import img from "../../assets/images/gift-image.png";
 import ReviewCard from "../../components/reviewCard";
 import { useParams } from "react-router-dom";
-import { FaBagShopping, FaShop } from "react-icons/fa6";
 import "./style.scss";
 
 const productData = [
@@ -95,35 +97,16 @@ const productData = [
 
 const ItemDescription = () => {
   const { id } = useParams();
-  const navigate = useNavigate();
-  const location = useLocation();
-  const isSellerActive = location.pathname === "/seller";
   const product = productData.find((p) => p.id === parseInt(id));
+  const { addToCart } = useCart();
+  const navigate = useNavigate();
 
   if (!product) return <h2>Product not found</h2>;
 
   return (
     <>
       <NavScrollExample />
-      <div className="custom-button-group">
-        <CustomButton
-          className={`custom-btn ${!isSellerActive ? "active-btn" : ""}`}
-          icon={FaBagShopping}
-          variant="solid"
-          onClick={() => navigate("/")}
-        >
-          Buyer
-        </CustomButton>
 
-        <CustomButton
-          className={`custom-btn ${isSellerActive ? "active-btn" : ""}`}
-          icon={FaShop}
-          variant="outline"
-          onClick={() => navigate("/seller")}
-        >
-          Seller
-        </CustomButton>
-      </div>
       <div className="product-description">
         <div className="product-details-wrapper">
           <img
@@ -144,8 +127,27 @@ const ItemDescription = () => {
             <p className="desc">
               {product.description || "No description available at the moment."}
             </p>
-
-            <CustomButton className="add-to-cart">Add to Cart</CustomButton>
+            <Button
+              variant="warning"
+              className="add-to-cart"
+              onClick={(e) => {
+                e.stopPropagation();
+                addToCart(product);
+                toast.success("Added to cart!");
+              }}
+            >
+              Add to Cart
+            </Button>
+            <CustomButton
+              className="add-review"
+              onClick={() =>
+                navigate(`/reviews/${product.id}`, {
+                  state: { productName: product.title },
+                })
+              }
+            >
+              Add a Review
+            </CustomButton>
           </div>
         </div>
       </div>

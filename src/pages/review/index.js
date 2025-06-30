@@ -1,70 +1,75 @@
-import { useNavigate, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
+import { useState, useEffect } from "react";
 import NavScrollExample from "../../layout/navbar";
 import CustomButton from "../../components/button/index";
 import Form from "react-bootstrap/Form";
-import FormInput from "../../components/form";
 import ReviewCard from "../../components/reviewCard";
-import { FaBagShopping, FaShop } from "react-icons/fa6";
 import "./style.scss";
 
 const ReviewPage = ({ title = "Customer Reviews" }) => {
-  const navigate = useNavigate();
   const location = useLocation();
-  const isSellerActive = location.pathname === "/seller";
+
+  const productNameFromState = location.state?.productName || "";
+
+  const [selectedProduct, setSelectedProduct] = useState("");
+  const [selectedRating, setSelectedRating] = useState("");
+  const [reviewText, setReviewText] = useState("");
+
+  useEffect(() => {
+    if (productNameFromState) {
+      setSelectedProduct(productNameFromState);
+    }
+  }, [productNameFromState]);
 
   return (
     <>
       <NavScrollExample />
-      <div className="custom-button-group">
-        <CustomButton
-          className={`custom-btn ${!isSellerActive ? "active-btn" : ""}`}
-          icon={FaBagShopping}
-          variant="solid"
-          onClick={() => navigate("/")}
-        >
-          Buyer
-        </CustomButton>
 
-        <CustomButton
-          className={`custom-btn ${isSellerActive ? "active-btn" : ""}`}
-          icon={FaShop}
-          variant="outline"
-          onClick={() => navigate("/seller")}
-        >
-          Seller
-        </CustomButton>
-      </div>
       <div className="review-form-container">
         <h2 className="section-heading">{title}</h2>
 
         <Form>
-          <FormInput
-            type="select"
-            label="Product"
-            options={["Premium Wedding Gift Box", "Birthday Deluxe Collection"]}
-            placeholder="Select a product"
-          />
+          <Form.Group controlId="product-select">
+            <Form.Label>Product</Form.Label>
+            <Form.Select
+              value={selectedProduct}
+              onChange={(e) => setSelectedProduct(e.target.value)}
+            >
+              <option value="">Select a product</option>
+              <option>Premium Wedding Gift Box</option>
+              <option>Birthday Deluxe Collection</option>
+              <option>Romantic Anniversary Set</option>
+              <option>Festive Christmas Collection</option>
+            </Form.Select>
+          </Form.Group>
 
-          <FormInput
-            type="select"
-            label="Rating"
-            options={[
-              "★★★★★ (5 stars)",
-              "★★★★☆ (4 stars)",
-              "★★★☆☆ (3 stars)",
-              "★★☆☆☆ (2 stars)",
-              "★☆☆☆☆ (1 star)",
-            ]}
-            placeholder="Select rating"
-          />
+          <Form.Group controlId="rating-select" className="mt-3">
+            <Form.Label>Rating</Form.Label>
+            <Form.Select
+              value={selectedRating}
+              onChange={(e) => setSelectedRating(e.target.value)}
+            >
+              <option value="">Select rating</option>
+              <option>★★★★★ (5 stars)</option>
+              <option>★★★★☆ (4 stars)</option>
+              <option>★★★☆☆ (3 stars)</option>
+              <option>★★☆☆☆ (2 stars)</option>
+              <option>★☆☆☆☆ (1 star)</option>
+            </Form.Select>
+          </Form.Group>
 
-          <FormInput
-            type="textarea"
-            label="Your Review"
-            placeholder="Write your thoughts..."
-          />
+          <Form.Group controlId="review-textarea" className="mt-3">
+            <Form.Label>Your Review</Form.Label>
+            <Form.Control
+              as="textarea"
+              rows={3}
+              placeholder="Write your thoughts..."
+              value={reviewText}
+              onChange={(e) => setReviewText(e.target.value)}
+            />
+          </Form.Group>
 
-          <CustomButton className="add-btn">Submit Review</CustomButton>
+          <CustomButton className="add-btn mt-4">Submit Review</CustomButton>
         </Form>
       </div>
 
