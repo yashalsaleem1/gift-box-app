@@ -4,7 +4,20 @@ import CustomButton from "../../components/button/index";
 import Form from "react-bootstrap/Form";
 import FormInput from "../../components/form";
 import { toast } from "react-toastify";
+import * as Yup from "yup";
 import "./style.scss";
+
+const checkoutSchema = Yup.object().shape({
+  name: Yup.string().required("Full name is required"),
+  email: Yup.string()
+    .email("Invalid email address")
+    .required("Email is required"),
+  address: Yup.string().required("Address is required"),
+  city: Yup.string().required("City is required"),
+  zip: Yup.string()
+    .matches(/^\d{5}$/, "ZIP Code must be 5 digits")
+    .required("ZIP Code is required"),
+});
 
 const CheckoutPage = ({ title = "Checkout" }) => {
   const [formData, setFormData] = useState({
@@ -23,35 +36,28 @@ const CheckoutPage = ({ title = "Checkout" }) => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (
-      !formData.name ||
-      !formData.email ||
-      !formData.address ||
-      !formData.city ||
-      !formData.zip
-    ) {
-      toast.error("Please fill in all fields.");
-      return;
+    try {
+      await checkoutSchema.validate(formData, { abortEarly: false });
+
+      toast.success("Order placed successfully!");
+
+      setFormData({
+        name: "",
+        email: "",
+        address: "",
+        city: "",
+        zip: "",
+      });
+    } catch (err) {
+      if (err.inner && err.inner.length > 0) {
+        err.inner.forEach((error) => toast.error(error.message));
+      } else {
+        toast.error("Validation failed.");
+      }
     }
-
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(formData.email)) {
-      toast.error("Please enter a valid email address.");
-      return;
-    }
-
-    toast.success("Order placed successfully!");
-
-    setFormData({
-      name: "",
-      email: "",
-      address: "",
-      city: "",
-      zip: "",
-    });
   };
 
   return (

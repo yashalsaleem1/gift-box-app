@@ -9,7 +9,7 @@ const ShoppingCart = () => {
   const { cart, setCart } = useCart();
   const navigate = useNavigate();
 
-  const increaseQty = (id) => {
+  const handleIncrease = (id) => {
     setCart((prev) =>
       prev.map((item) =>
         item.id === id ? { ...item, quantity: item.quantity + 1 } : item
@@ -17,7 +17,7 @@ const ShoppingCart = () => {
     );
   };
 
-  const decreaseQty = (id) => {
+  const handleDecrease = (id) => {
     setCart((prev) =>
       prev.map((item) =>
         item.id === id && item.quantity > 1
@@ -27,8 +27,12 @@ const ShoppingCart = () => {
     );
   };
 
-  const deleteItem = (id) => {
+  const handleDelete = (id) => {
     setCart((prev) => prev.filter((item) => item.id !== id));
+  };
+
+  const handleCheckout = () => {
+    navigate("/checkout");
   };
 
   const total = cart.reduce(
@@ -55,13 +59,13 @@ const ShoppingCart = () => {
                   <p className="price">${item.discountedPrice.toFixed(2)}</p>
                 </div>
                 <div className="quantity-controls">
-                  <button onClick={() => decreaseQty(item.id)}>-</button>
+                  <button onClick={() => handleDecrease(item.id)}>-</button>
                   <span>{item.quantity}</span>
-                  <button onClick={() => increaseQty(item.id)}>+</button>
+                  <button onClick={() => handleIncrease(item.id)}>+</button>
                 </div>
                 <button
                   className="delete-btn"
-                  onClick={() => deleteItem(item.id)}
+                  onClick={() => handleDelete(item.id)}
                 >
                   <FaTrash />
                 </button>
@@ -73,7 +77,7 @@ const ShoppingCart = () => {
               <CustomButton
                 variant="solid"
                 className="checkout-btn"
-                onClick={() => navigate("/checkout")}
+                onClick={handleCheckout}
               >
                 Proceed to Checkout →
               </CustomButton>

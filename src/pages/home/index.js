@@ -4,7 +4,7 @@ import CustomButton from "../../components/button/index";
 import HeroBanner from "../../components/banner/index";
 import CateCard from "../../components/cateCard/index";
 import FeaturedCard from "../../components/featuredCard";
-import productData from "../productData";
+import productData from "../constants/productData";
 import {
   FaBagShopping,
   FaShop,
