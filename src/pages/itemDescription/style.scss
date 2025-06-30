@@ -53,11 +53,28 @@
       .add-to-cart {
         background-color: $primary-color;
         color: white;
-        padding: 1rem 2rem;
+        padding: 0.5rem 1rem;
         border: none;
         border-radius: 0.5rem;
         font-weight: bold;
         cursor: pointer;
+        margin: 0.3rem 0.3rem;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: $outline-color;
+        }
+      }
+
+      .add-review {
+        background-color: $primary-color;
+        color: white;
+        padding: 0.5rem 1rem;
+        border: none;
+        border-radius: 0.5rem;
+        font-weight: bold;
+        cursor: pointer;
+        margin: 0.3rem 0.3rem;
         transition: background-color 0.3s ease;
 
         &:hover {

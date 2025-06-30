@@ -82,7 +82,7 @@ function FeaturedCard({ title = "", products = [], productLink }) {
                   className="add-btn"
                   onClick={(e) => {
                     e.stopPropagation();
-                    addToCart(product); // send product to cart
+                    addToCart(product);
                     toast.success("Added to cart!");
                   }}
                 >
