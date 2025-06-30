@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
@@ -11,6 +11,8 @@ import { IoIosContact } from "react-icons/io";
 import "./style.scss";
 
 function NavScrollExample() {
+  const navigate = useNavigate();
+
   return (
     <Navbar expand="lg" className="custom-navbar">
       <Container fluid>
@@ -38,7 +40,7 @@ function NavScrollExample() {
             <FaMagnifyingGlass />
           </Form>
           <div className="navbar-icons">
-            <FaCartShopping />
+            <FaCartShopping onClick={() => navigate("/cart")} />
             <IoIosContact />
           </div>
         </Navbar.Collapse>
