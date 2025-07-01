@@ -5,6 +5,8 @@ import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import DiscountBadge from "../badge";
 import { useCart } from "../../pages/context/index";
+import { useSelector } from "react-redux";
+import { selectCurrentUser } from "../../auth/authSelector";
 import { FaStar, FaStarHalfAlt, FaRegStar } from "react-icons/fa";
 import "./style.scss";
 
@@ -25,6 +27,18 @@ const renderStars = (rating) => {
 function FeaturedCard({ title = "", products = [], productLink }) {
   const navigate = useNavigate();
   const { addToCart } = useCart();
+  const user = useSelector(selectCurrentUser);
+
+  const handleAddToCart = (e, product) => {
+    e.stopPropagation();
+    if (!user) {
+      toast.error("Please login to add items to cart");
+      navigate("/login");
+      return;
+    }
+    addToCart(product);
+    toast.success("Added to cart!");
+  };
 
   return (
     <div className="featured-section">
@@ -80,11 +94,7 @@ function FeaturedCard({ title = "", products = [], productLink }) {
                 <Button
                   variant="warning"
                   className="add-btn"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    addToCart(product);
-                    toast.success("Added to cart!");
-                  }}
+                  onClick={(e) => handleAddToCart(e, product)}
                 >
                   Add to Cart
                 </Button>

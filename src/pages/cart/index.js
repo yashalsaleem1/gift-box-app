@@ -1,13 +1,17 @@
 import { useCart } from "../context";
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { selectCurrentUser } from "../../auth/authSelector";
 import CustomButton from "../../components/button/index";
 import NavScrollExample from "../../layout/navbar/index";
 import { FaTrash } from "react-icons/fa6";
+import { toast } from "react-toastify";
 import "./style.scss";
 
 const ShoppingCart = () => {
   const { cart, setCart } = useCart();
   const navigate = useNavigate();
+  const user = useSelector(selectCurrentUser);
 
   const handleIncrease = (id) => {
     setCart((prev) =>
@@ -32,7 +36,12 @@ const ShoppingCart = () => {
   };
 
   const handleCheckout = () => {
-    navigate("/checkout");
+    if (!user || user.role !== "buyer") {
+      toast.info("Please log in as a buyer to proceed to checkout.");
+      navigate("/login");
+    } else {
+      navigate("/checkout");
+    }
   };
 
   const total = cart.reduce(

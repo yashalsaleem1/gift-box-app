@@ -1,0 +1,51 @@
+@import "../../assets/styles/variables.scss";
+
+.login-form-container {
+  background-image: var(--bg-url);
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 5rem;
+  padding-right: 2rem;
+}
+
+.login-content {
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.203);
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.section-heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333333;
+  margin-bottom: 1rem;
+}
+
+.input-section {
+  padding: 0.5rem;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-top: 0.4rem;
+}
+
+.login-btn {
+  width: 100%;
+  background-color: $primary-color;
+  color: $text-light;
+  padding: 0.6rem;
+  border-radius: 5px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 0.5rem;
+}

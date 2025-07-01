@@ -41,7 +41,7 @@ function NavScrollExample() {
           </Form>
           <div className="navbar-icons">
             <FaCartShopping onClick={() => navigate("/cart")} />
-            <IoIosContact />
+            <IoIosContact onClick={() => navigate("/login")} />
           </div>
         </Navbar.Collapse>
       </Container>
