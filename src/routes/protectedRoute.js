@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import { Navigate } from "react-router-dom";
-import { selectCurrentUser } from "../auth/authSelector";
+import { selectCurrentUser } from "../redux/authSelector";
 
 const ProtectedRoute = ({ children, roles }) => {
   const user = useSelector(selectCurrentUser);

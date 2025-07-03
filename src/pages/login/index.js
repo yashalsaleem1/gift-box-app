@@ -1,11 +1,14 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { login } from "../../auth/authSlice";
-import { selectAuthError, selectAuthLoading } from "../../auth/authSelector.js";
+import { login } from "../../redux/actions";
+import {
+  selectAuthError,
+  selectAuthLoading,
+} from "../../redux/authSelector.js";
 import { useNavigate } from "react-router-dom";
 import { FaBagShopping, FaShop } from "react-icons/fa6";
 import CustomButton from "../../components/button/index";
-import bg from "../../assets/images/background.png";
+import bg from "../../assets/images/login-background.png";
 import "./style.scss";
 
 const Login = () => {

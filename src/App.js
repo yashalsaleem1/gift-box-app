@@ -4,7 +4,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { CartProvider } from "./pages/context";
 import { Provider } from "react-redux";
-import { store } from "./components/store";
+import { store } from "./redux/store";
 import routeConfig from "./routes/routeConfig";
 
 function App() {

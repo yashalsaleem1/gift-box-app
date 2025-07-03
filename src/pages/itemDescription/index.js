@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import { useSelector } from "react-redux";
-import { selectCurrentUser } from "../../auth/authSelector";
+import { selectCurrentUser } from "../../redux/authSelector";
 import { useCart } from "../../pages/context/index";
 import NavScrollExample from "../../layout/navbar/index";
 import { Button } from "react-bootstrap";
@@ -119,7 +119,6 @@ const ItemDescription = () => {
   return (
     <>
       <NavScrollExample />
-
       <div className="product-description">
         <div className="product-details-wrapper">
           <img
@@ -160,7 +159,7 @@ const ItemDescription = () => {
           </div>
         </div>
       </div>
-      <h3 className="review-section-title">Customer Reviews</h3>
+      <h3 className="review-section-title">Customer Reviews</h3>{" "}
       <div className="review-list">
         {product.customerReviews && product.customerReviews.length > 0 ? (
           product.customerReviews.map((review, index) => (
