@@ -1,12 +1,14 @@
+import React from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import { toast } from "react-toastify";
+import { useSelector } from "react-redux";
+import { selectCurrentUser } from "../../auth/authSelector";
+import { useCart } from "../../pages/context/index";
 import NavScrollExample from "../../layout/navbar/index";
-import { useNavigate } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import CustomButton from "../../components/button/index";
-import { useCart } from "../../pages/context/index";
-import { toast } from "react-toastify";
-import img from "../../assets/images/gift-image.png";
 import ReviewCard from "../../components/reviewCard";
-import { useParams } from "react-router-dom";
+import img from "../../assets/images/gift-image.png";
 import "./style.scss";
 
 const productData = [
@@ -100,6 +102,17 @@ const ItemDescription = () => {
   const product = productData.find((p) => p.id === parseInt(id));
   const { addToCart } = useCart();
   const navigate = useNavigate();
+  const user = useSelector(selectCurrentUser);
+
+  const handleAddToCart = (product) => {
+    if (!user) {
+      toast.error("Please login to add items to cart");
+      navigate("/login");
+      return;
+    }
+    addToCart(product);
+    toast.success("Added to cart!");
+  };
 
   if (!product) return <h2>Product not found</h2>;
 
@@ -130,11 +143,7 @@ const ItemDescription = () => {
             <Button
               variant="warning"
               className="add-to-cart"
-              onClick={(e) => {
-                e.stopPropagation();
-                addToCart(product);
-                toast.success("Added to cart!");
-              }}
+              onClick={() => handleAddToCart(product)}
             >
               Add to Cart
             </Button>
