@@ -1,9 +1,9 @@
 import { useCart } from "../context";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { selectCurrentUser } from "../../redux/authSelector";
-import CustomButton from "../../components/button/index";
-import NavScrollExample from "../../layout/navbar/index";
+import { selectCurrentUser } from "../../../redux/authSelector";
+import CustomButton from "../../../components/button/index";
+import NavScrollExample from "../../../layout/navbar/index";
 import { FaTrash } from "react-icons/fa6";
 import { toast } from "react-toastify";
 import "./style.scss";

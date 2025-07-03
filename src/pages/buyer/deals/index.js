@@ -1,7 +1,7 @@
 import { useNavigate, useLocation } from "react-router-dom";
-import FeaturedCard from "../../components/featuredCard";
-import CustomButton from "../../components/button";
-import NavScrollExample from "../../layout/navbar";
+import FeaturedCard from "../../../components/featuredCard";
+import CustomButton from "../../../components/button";
+import NavScrollExample from "../../../layout/navbar";
 import { FaBagShopping, FaShop } from "react-icons/fa6";
 
 const allProducts = [

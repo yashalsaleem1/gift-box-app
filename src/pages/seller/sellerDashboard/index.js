@@ -1,18 +1,8 @@
-import { useNavigate, useLocation } from "react-router-dom";
-import NavScrollExample from "../../layout/navbar";
-import InfoCard from "../../components/sellerInfoCard";
-import CustomButton from "../../components/button";
-import ControlCard from "../../components/controlCard";
+import NavScrollExample from "../../../layout/navbar";
+import InfoCard from "../../../components/sellerInfoCard";
+import ControlCard from "../../../components/controlCard";
 import { HiListBullet } from "react-icons/hi2";
-import {
-  FaBox,
-  FaStar,
-  FaPercent,
-  FaTags,
-  FaBagShopping,
-  FaShop,
-  FaWarehouse,
-} from "react-icons/fa6";
+import { FaBox, FaStar, FaPercent, FaTags, FaWarehouse } from "react-icons/fa6";
 
 const infoData = [
   {
@@ -65,33 +55,9 @@ const controlData = [
 ];
 
 const SellerDashboard = () => {
-  const navigate = useNavigate();
-  const location = useLocation();
-  const isSellerActive = location.pathname === "/seller";
-
   return (
     <div>
       <NavScrollExample />
-
-      <div className="custom-button-group">
-        <CustomButton
-          className={`custom-btn ${!isSellerActive ? "active-btn" : ""}`}
-          icon={FaBagShopping}
-          variant="solid"
-          onClick={() => navigate("/")}
-        >
-          Buyer
-        </CustomButton>
-
-        <CustomButton
-          className={`custom-btn ${isSellerActive ? "active-btn" : ""}`}
-          icon={FaShop}
-          variant="outline"
-          onClick={() => navigate("/seller")}
-        >
-          Seller
-        </CustomButton>
-      </div>
 
       <InfoCard title="Seller Dashboard" info={infoData} />
       <ControlCard control={controlData} />

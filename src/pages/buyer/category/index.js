@@ -1,5 +1,5 @@
-import NavScrollExample from "../../layout/navbar";
-import CateCard from "../../components/cateCard";
+import NavScrollExample from "../../../layout/navbar";
+import CateCard from "../../../components/cateCard";
 import { FaHeart, FaCakeCandles, FaRing, FaTree } from "react-icons/fa6";
 import { GiGraduateCap } from "react-icons/gi";
 

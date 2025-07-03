@@ -2,13 +2,13 @@ import React from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import { useSelector } from "react-redux";
-import { selectCurrentUser } from "../../redux/authSelector";
-import { useCart } from "../../pages/context/index";
-import NavScrollExample from "../../layout/navbar/index";
+import { selectCurrentUser } from "../../../redux/authSelector";
+import { useCart } from "../context/index";
+import NavScrollExample from "../../../layout/navbar/index";
 import { Button } from "react-bootstrap";
-import CustomButton from "../../components/button/index";
-import ReviewCard from "../../components/reviewCard";
-import img from "../../assets/images/gift-image.png";
+import CustomButton from "../../../components/button/index";
+import ReviewCard from "../../../components/reviewCard";
+import img from "../../../assets/images/gift-image.png";
 import "./style.scss";
 
 const productData = [
