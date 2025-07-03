@@ -1,4 +1,4 @@
-import NavScrollExample from "../../../layout/navbar";
+import NavbarWrapper from "../../../layout/navbar";
 import CateCard from "../../../components/cateCard";
 import { FaHeart, FaCakeCandles, FaRing, FaTree } from "react-icons/fa6";
 import { GiGraduateCap } from "react-icons/gi";
@@ -39,7 +39,7 @@ const moreCategoryData = [
 const CategoryPage = () => {
   return (
     <>
-      <NavScrollExample />
+      <NavbarWrapper />
 
       <CateCard title="All Categories" categories={moreCategoryData} />
     </>

@@ -1,4 +1,4 @@
-import NavScrollExample from "../../../layout/navbar";
+import NavbarWrapper from "../../../layout/navbar";
 import InfoCard from "../../../components/sellerInfoCard";
 import ControlCard from "../../../components/controlCard";
 import { HiListBullet } from "react-icons/hi2";
@@ -57,7 +57,7 @@ const controlData = [
 const SellerDashboard = () => {
   return (
     <div>
-      <NavScrollExample />
+      <NavbarWrapper />
 
       <InfoCard title="Seller Dashboard" info={infoData} />
       <ControlCard control={controlData} />
