@@ -1,13 +1,13 @@
 import { Navigate } from "react-router-dom";
-import Home from "../pages/home";
+import Home from "../pages/buyer/home";
 import Login from "../pages/login";
-import DealsPage from "../pages/deals";
-import CategoryPage from "../pages/category";
-import ReviewPage from "../pages/review";
-import ItemDescription from "../pages/itemDescription";
-import ShoppingCart from "../pages/cart";
-import CheckoutPage from "../pages/checkout";
-import SellerDashboard from "../pages/sellerDashboard";
+import DealsPage from "../pages/buyer/deals";
+import CategoryPage from "../pages/buyer/category";
+import ReviewPage from "../pages/buyer/review";
+import ItemDescription from "../pages/buyer/itemDescription";
+import ShoppingCart from "../pages/buyer/cart";
+import CheckoutPage from "../pages/buyer/checkout";
+import SellerDashboard from "../pages/seller/sellerDashboard";
 import ProtectedRoute from "./protectedRoute";
 
 const routeConfig = [

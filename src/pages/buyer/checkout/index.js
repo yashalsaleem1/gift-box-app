@@ -1,8 +1,8 @@
 import { useState } from "react";
-import NavScrollExample from "../../layout/navbar";
-import CustomButton from "../../components/button/index";
+import NavScrollExample from "../../../layout/navbar";
+import CustomButton from "../../../components/button/index";
 import Form from "react-bootstrap/Form";
-import FormInput from "../../components/form";
+import FormInput from "../../../components/form";
 import { toast } from "react-toastify";
 import * as Yup from "yup";
 import "./style.scss";

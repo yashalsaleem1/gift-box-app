@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import DiscountBadge from "../badge";
-import { useCart } from "../../pages/context/index";
+import { useCart } from "../../pages/buyer/context/index";
 import { useSelector } from "react-redux";
 import { selectCurrentUser } from "../../redux/authSelector";
 import { FaStar, FaStarHalfAlt, FaRegStar } from "react-icons/fa";

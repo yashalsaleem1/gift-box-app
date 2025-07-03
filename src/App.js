@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.css";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { CartProvider } from "./pages/context";
+import { CartProvider } from "./pages/buyer/context";
 import { Provider } from "react-redux";
 import { store } from "./redux/store";
 import routeConfig from "./routes/routeConfig";
