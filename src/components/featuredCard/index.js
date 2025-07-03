@@ -6,7 +6,7 @@ import Button from "react-bootstrap/Button";
 import DiscountBadge from "../badge";
 import { useCart } from "../../pages/context/index";
 import { useSelector } from "react-redux";
-import { selectCurrentUser } from "../../auth/authSelector";
+import { selectCurrentUser } from "../../redux/authSelector";
 import { FaStar, FaStarHalfAlt, FaRegStar } from "react-icons/fa";
 import "./style.scss";
 
