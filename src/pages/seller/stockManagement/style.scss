@@ -42,6 +42,13 @@
     width: 70%;
   }
 
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    opacity: 1; // Ensure it's visible
+    display: inline-block;
+    -webkit-appearance: inner-spin-button;
+    margin: 0;
+  }
   .apply-btn {
     background-color: $primary-color;
     border: none;

@@ -1,9 +1,14 @@
 import React, { useState } from "react";
 import NavbarWrapper from "../../../layout/navbar";
 import CateCard from "../../../components/cateCard";
-import stockData from "../../buyer/constants/stockData";
 import productData from "../../buyer/constants/productData";
 import { Button, Form, Card } from "react-bootstrap";
+import { toast } from "react-toastify";
+import {
+  FaBoxOpen,
+  FaExclamationTriangle,
+  FaTimesCircle,
+} from "react-icons/fa";
 import "./style.scss";
 
 const Stock = () => {
@@ -11,6 +16,59 @@ const Stock = () => {
   const [products, setProducts] = useState(productData);
   const [selectedProducts, setSelectedProducts] = useState([]);
   const [bulkAmount, setBulkAmount] = useState("");
+
+  //Update stock at card
+  const updateStock = () => {
+    let inStock = 0;
+    let lowStock = 0;
+    let outOfStock = 0;
+
+    products.forEach((product) => {
+      if (product.stock > 5) {
+        inStock++;
+      } else if (product.stock > 0) {
+        lowStock++;
+      } else {
+        outOfStock++;
+      }
+    });
+
+    return [
+      {
+        name: "In Stock",
+        description: (
+          <span
+            style={{ color: "#e91e63", fontSize: "1.5rem", fontWeight: "bold" }}
+          >
+            {inStock}
+          </span>
+        ),
+        icon: FaBoxOpen,
+      },
+      {
+        name: "Low Stock",
+        description: (
+          <span
+            style={{ color: "#ffc107", fontSize: "1.5rem", fontWeight: "bold" }}
+          >
+            {lowStock}
+          </span>
+        ),
+        icon: FaExclamationTriangle,
+      },
+      {
+        name: "Out of Stock",
+        description: (
+          <span
+            style={{ color: "#e91e63", fontSize: "1.5rem", fontWeight: "bold" }}
+          >
+            {outOfStock}
+          </span>
+        ),
+        icon: FaTimesCircle,
+      },
+    ];
+  };
 
   // Checkbox toggle
   const handleCheckboxChange = (id) => {
@@ -30,7 +88,8 @@ const Stock = () => {
     const changeAmount = parseInt(bulkAmount);
 
     if (isNaN(changeAmount)) {
-      alert("Please enter a valid bulk amount");
+      toast.warning("Please enter a valid bulk amount!");
+
       return;
     }
 
@@ -44,7 +103,7 @@ const Stock = () => {
 
     setProducts(updated);
     setBulkAmount("");
-    alert("Stock updated for selected products");
+    toast.success("Stock updated for selected products!");
   };
 
   // Track input change for each product
@@ -61,7 +120,7 @@ const Stock = () => {
     const changeAmount = parseInt(rawValue);
 
     if (isNaN(changeAmount)) {
-      alert("Please enter a valid number");
+      toast.warning("Please enter a valid number!");
       return;
     }
 
@@ -75,13 +134,13 @@ const Stock = () => {
 
     setProducts(updated);
     setStockInputs((prev) => ({ ...prev, [id]: "" }));
-    alert(`Stock updated for product ID ${id}`);
+    toast.success(`Stock updated for product ID ${id}`);
   };
 
   return (
     <div>
       <NavbarWrapper />
-      <CateCard title="Stock Management" categories={stockData} />
+      <CateCard title="Stock Management" categories={updateStock()} />
 
       <div className="bulk-stock-wrapper">
         <Card className="bulk-stock-card">
