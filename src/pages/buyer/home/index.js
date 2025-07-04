@@ -1,4 +1,4 @@
-import NavScrollExample from "../../../layout/navbar/index";
+import NavbarWrapper from "../../../layout/navbar/index";
 import HeroBanner from "../../../components/banner/index";
 import CateCard from "../../../components/cateCard/index";
 import FeaturedCard from "../../../components/featuredCard";
@@ -31,7 +31,7 @@ const categoryData = [
 const Home = () => {
   return (
     <>
-      <NavScrollExample />
+      <NavbarWrapper />
       <HeroBanner
         title="Premium Gift Boxes"
         description="Curated with love for every special occasion"

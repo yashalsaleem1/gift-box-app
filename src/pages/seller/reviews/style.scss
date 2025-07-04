@@ -1,0 +1,36 @@
+@import "../../../assets/styles/variables.scss";
+
+.review-form-container {
+  max-width: 50%;
+  margin: auto;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 1rem;
+  margin-top: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.185);
+
+  .section-heading {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #333333;
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+
+  .add-btn {
+    width: 100%;
+    font-weight: $font-semibold;
+    background-color: $primary-color;
+    color: $text-light;
+  }
+  .p {
+    text-align: center;
+  }
+}
+
+.review-section-container {
+  .review-section-title {
+    margin: 2rem 0 1rem 5rem;
+  }
+}

@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { selectCurrentUser } from "../../../redux/authSelector";
 import CustomButton from "../../../components/button/index";
-import NavScrollExample from "../../../layout/navbar/index";
+import NavbarWrapper from "../../../layout/navbar/index";
 import { FaTrash } from "react-icons/fa6";
 import { toast } from "react-toastify";
 import "./style.scss";
@@ -51,7 +51,7 @@ const ShoppingCart = () => {
 
   return (
     <>
-      <NavScrollExample />
+      <NavbarWrapper />
 
       <div className="shopping-cart-page">
         <h2>Shopping Cart</h2>

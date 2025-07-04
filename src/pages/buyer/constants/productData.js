@@ -9,6 +9,8 @@ const productData = [
     discountedPrice: 89.99,
     rating: 5,
     reviews: 127,
+    category: "Wedding",
+    stock: 15,
   },
   {
     id: 2,
@@ -18,6 +20,8 @@ const productData = [
     discountedPrice: 59.39,
     rating: 4,
     reviews: 89,
+    category: "Birthday",
+    stock: 21,
   },
   {
     id: 3,
@@ -27,6 +31,8 @@ const productData = [
     discountedPrice: 64.17,
     rating: 4,
     reviews: 156,
+    category: "Anniversary",
+    stock: 35,
   },
   {
     id: 4,
@@ -36,6 +42,8 @@ const productData = [
     discountedPrice: 76.0,
     rating: 4,
     reviews: 203,
+    category: "Festival",
+    stock: 5,
   },
 ];
 

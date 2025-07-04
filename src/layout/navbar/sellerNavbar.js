@@ -28,13 +28,13 @@ function SellerNavbar() {
             <Nav.Link as={Link} to="/products">
               My Products
             </Nav.Link>
-            <Nav.Link as={Link} to="/orders">
-              Order Management
+            <Nav.Link as={Link} to="/stock">
+              Stock Management
             </Nav.Link>
             <Nav.Link as={Link} to="/return">
               Return & Refund
             </Nav.Link>
-            <Nav.Link as={Link} to="/reviews">
+            <Nav.Link as={Link} to="/review">
               Reviews
             </Nav.Link>
           </Nav>

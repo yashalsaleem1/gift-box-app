@@ -1,5 +1,5 @@
 import { useState } from "react";
-import NavScrollExample from "../../../layout/navbar";
+import NavbarWrapper from "../../../layout/navbar";
 import CustomButton from "../../../components/button/index";
 import Form from "react-bootstrap/Form";
 import FormInput from "../../../components/form";
@@ -62,7 +62,7 @@ const CheckoutPage = ({ title = "Checkout" }) => {
 
   return (
     <>
-      <NavScrollExample />
+      <NavbarWrapper />
 
       <div className="checkout-form-container">
         <h2 className="section-heading">{title}</h2>

@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 import { useSelector } from "react-redux";
 import { selectCurrentUser } from "../../../redux/authSelector";
 import { useCart } from "../context/index";
-import NavScrollExample from "../../../layout/navbar/index";
+import NavbarWrapper from "../../../layout/navbar/index";
 import { Button } from "react-bootstrap";
 import CustomButton from "../../../components/button/index";
 import ReviewCard from "../../../components/reviewCard";
@@ -118,7 +118,7 @@ const ItemDescription = () => {
 
   return (
     <>
-      <NavScrollExample />
+      <NavbarWrapper />
       <div className="product-description">
         <div className="product-details-wrapper">
           <img

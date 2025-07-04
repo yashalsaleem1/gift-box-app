@@ -9,6 +9,8 @@ import ShoppingCart from "../pages/buyer/cart";
 import CheckoutPage from "../pages/buyer/checkout";
 import SellerDashboard from "../pages/seller/sellerDashboard";
 import ProtectedRoute from "./protectedRoute";
+import SellerReview from "../pages/seller/reviews";
+import Stock from "../pages/seller/stockManagement";
 
 const routeConfig = [
   // Public routes
@@ -50,6 +52,22 @@ const routeConfig = [
     element: (
       <ProtectedRoute roles={["seller"]}>
         <SellerDashboard />
+      </ProtectedRoute>
+    ),
+  },
+  {
+    path: "/review",
+    element: (
+      <ProtectedRoute roles={["seller"]}>
+        <SellerReview />
+      </ProtectedRoute>
+    ),
+  },
+  {
+    path: "/stock",
+    element: (
+      <ProtectedRoute roles={["seller"]}>
+        <Stock />
       </ProtectedRoute>
     ),
   },

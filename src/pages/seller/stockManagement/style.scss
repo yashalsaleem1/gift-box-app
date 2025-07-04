@@ -1,0 +1,98 @@
+@import "../../../assets/styles/variables.scss";
+
+.bulk-stock-wrapper {
+  width: 100%;
+  margin: auto;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 1rem;
+  margin-top: 2rem;
+  align-items: center;
+
+  .bulk-action-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .bulk-stock-card {
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    width: 100%;
+  }
+
+  .bulk-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: $font-semibold;
+  }
+
+  .bulk-action-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+    margin-top: 1rem;
+  }
+
+  .bulk-input {
+    flex: 1;
+    width: 70%;
+  }
+
+  .apply-btn {
+    background-color: $primary-color;
+    border: none;
+    margin-right: 0.3rem;
+  }
+
+  .select-all-btn {
+    white-space: nowrap;
+  }
+  .product-stock-card {
+    margin-top: 1.5rem;
+    border-radius: 15px;
+    padding: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  }
+
+  .product-card-body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .product-info {
+    flex: 1;
+    min-width: 200px;
+  }
+
+  .product-stock-controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .stock-count {
+    text-align: center;
+  }
+
+  .stock-count .count {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: $primary-color;
+  }
+
+  .stock-input {
+    width: 80px;
+  }
+
+  .update-stock-btn {
+    background-color: $primary-color;
+    border: none;
+  }
+}
