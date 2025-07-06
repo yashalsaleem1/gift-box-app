@@ -4,6 +4,7 @@ import NavScrollExample from "../../../layout/navbar";
 import CustomButton from "../../../components/button/index";
 import Form from "react-bootstrap/Form";
 import ReviewCard from "../../../components/reviewCard";
+import productData from "../../buyer/constants/productData";
 import "./style.scss";
 
 const ReviewPage = ({ title = "Customer Reviews" }) => {
@@ -36,10 +37,11 @@ const ReviewPage = ({ title = "Customer Reviews" }) => {
               onChange={(e) => setSelectedProduct(e.target.value)}
             >
               <option value="">Select a product</option>
-              <option>Premium Wedding Gift Box</option>
-              <option>Birthday Deluxe Collection</option>
-              <option>Romantic Anniversary Set</option>
-              <option>Festive Christmas Collection</option>
+              {productData.map((product, idx) => (
+                <option key={idx} value={product.title}>
+                  {product.title}
+                </option>
+              ))}
             </Form.Select>
           </Form.Group>
 
@@ -76,45 +78,20 @@ const ReviewPage = ({ title = "Customer Reviews" }) => {
       <div className="review-section-container">
         <h4 className="review-section-title">All Reviews</h4>
 
-        <ReviewCard
-          title="Premium Wedding Gift Box"
-          rating={5}
-          name="Sarah M."
-          date="2024-01-15"
-          feedback="Absolutely beautiful! Perfect for our wedding guests."
-        />
-
-        <ReviewCard
-          title="Birthday Deluxe Collection"
-          rating={4}
-          name="Mike R."
-          date="2024-01-10"
-          feedback="Great quality items, kids loved it!"
-        />
-
-        <ReviewCard
-          title="Premium Wedding Gift Box"
-          rating={5}
-          name="Jennifer L."
-          date="2024-01-12"
-          feedback="Exceeded expectations! Beautiful packaging and quality items."
-        />
-
-        <ReviewCard
-          title="Romantic Anniversary Set"
-          rating={5}
-          name="David K."
-          date="2024-01-08"
-          feedback="Perfect romantic touch for our anniversary celebration."
-        />
-
-        <ReviewCard
-          title="Festive Christmas Collection"
-          rating={4}
-          name="Mary T."
-          date="2024-01-05"
-          feedback="Great holiday spirit in this box!"
-        />
+        {productData.map((product, idx) =>
+          Array.isArray(product.reviews)
+            ? product.reviews.map((review, i) => (
+                <ReviewCard
+                  key={`${idx}-${i}`}
+                  title={product.title}
+                  rating={review.rating}
+                  name={review.name}
+                  date={review.date}
+                  feedback={review.message}
+                />
+              ))
+            : null
+        )}
       </div>
     </>
   );

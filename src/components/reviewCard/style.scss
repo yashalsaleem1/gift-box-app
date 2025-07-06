@@ -1,47 +1,42 @@
 .review-card {
-  background: #fff;
-  padding: 1rem 1.25rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.237);
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  max-width: 90%;
-  margin: 2rem auto;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 
-  .review-header {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 0.75rem;
-    margin-bottom: 0.5rem;
+  .product-image {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 12px;
+  }
 
-    .product-title {
-      color: #e91e63;
-      font-weight: 600;
-    }
+  .btn-pink {
+    background-color: #e91e63;
+    color: white;
+    border: none;
 
-    .stars {
-      display: flex;
-      gap: 2px;
-    }
-
-    .reviewer-name {
-      font-weight: 600;
-      margin-left: 1.5rem;
-    }
-
-    .review-date {
-      color: gray;
-      font-size: 0.9rem;
-      margin-left: auto;
+    &:hover {
+      background-color: #d81b60;
     }
   }
 
-  .review-body {
-    font-size: 1rem;
-    color: #333;
-    margin-top: 4px;
+  .btn-yellow {
+    background-color: #ffc107;
+    color: black;
+    border: none;
+
+    &:hover {
+      background-color: #e0a800;
+    }
+  }
+
+  .btn-dark {
+    background-color: #333;
+    color: white;
+    border: none;
+
+    &:hover {
+      background-color: #000;
+    }
   }
 }

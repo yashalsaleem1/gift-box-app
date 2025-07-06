@@ -89,7 +89,13 @@ function FeaturedCard({ title = "", products = [], productLink }) {
                 </div>
                 <div className="rating">
                   {renderStars(product.rating)}
-                  <span className="reviews">({product.reviews} reviews)</span>
+                  <span className="reviews">
+                    (
+                    {Array.isArray(product.reviews)
+                      ? product.reviews.length
+                      : 0}{" "}
+                    reviews)
+                  </span>
                 </div>
                 <Button
                   variant="warning"

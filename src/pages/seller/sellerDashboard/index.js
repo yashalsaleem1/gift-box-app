@@ -33,24 +33,28 @@ const controlData = [
     title: "My Products & Reviews",
     description: "View all your products with customer feedback and ratings",
     content: "View Products",
+    path: "/seller/products",
   },
   {
     icon: FaWarehouse,
     title: "Stock Management",
     description: "Track and update your inventory levels across all products",
     content: "Manage Stock",
+    path: "/seller/stock",
   },
   {
     icon: FaPercent,
     title: "Discounts & Offers",
     description: "Create automatic discounts and promotional offer",
     content: "Manage Discounts",
+    path: "/seller/discounts",
   },
   {
     icon: FaTags,
     title: "Special Deals",
     description: "Create and manage special deal campaigns",
     content: "Manage Deals",
+    path: "/seller/deals",
   },
 ];
 
