@@ -25,10 +25,10 @@ function SellerNavbar() {
             <Nav.Link as={Link} to="/seller">
               Dashboard
             </Nav.Link>
-            <Nav.Link as={Link} to="/products">
+            <Nav.Link as={Link} to="/seller/products">
               My Products
             </Nav.Link>
-            <Nav.Link as={Link} to="/stock">
+            <Nav.Link as={Link} to="/seller/stock">
               Stock Management
             </Nav.Link>
             <Nav.Link as={Link} to="/return">

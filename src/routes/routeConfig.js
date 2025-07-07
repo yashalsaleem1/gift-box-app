@@ -11,6 +11,7 @@ import SellerDashboard from "../pages/seller/sellerDashboard";
 import ProtectedRoute from "./protectedRoute";
 import SellerReview from "../pages/seller/reviews";
 import Stock from "../pages/seller/stockManagement";
+import Products from "../pages/seller/products";
 
 const routeConfig = [
   // Public routes
@@ -64,14 +65,21 @@ const routeConfig = [
     ),
   },
   {
-    path: "/stock",
+    path: "/seller/products",
+    element: (
+      <ProtectedRoute roles={["seller"]}>
+        <Products />
+      </ProtectedRoute>
+    ),
+  },
+  {
+    path: "/seller/stock",
     element: (
       <ProtectedRoute roles={["seller"]}>
         <Stock />
       </ProtectedRoute>
     ),
   },
-
   // Catch-all fallback
   { path: "*", element: <Navigate to="/" /> },
 ];
