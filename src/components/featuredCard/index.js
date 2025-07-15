@@ -31,11 +31,13 @@ function FeaturedCard({ title = "", products = [], productLink }) {
 
   const handleAddToCart = (e, product) => {
     e.stopPropagation();
-    if (!user) {
-      toast.error("Please login to add items to cart");
+
+    if (!user || user.role !== "buyer") {
+      toast.error("Please login as a buyer to add items to cart");
       navigate("/login");
       return;
     }
+
     addToCart(product);
     toast.success("Added to cart!");
   };

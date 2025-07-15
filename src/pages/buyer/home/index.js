@@ -29,6 +29,11 @@ const categoryData = [
 ];
 
 const Home = () => {
+  //create a state to save categoryData
+
+  //Create a useEffect to fetch data from API and update state
+
+  // create functions to handel category changes
   return (
     <>
       <NavbarWrapper />
