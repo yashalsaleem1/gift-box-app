@@ -24,11 +24,11 @@
 
   .filter-row {
     display: flex;
-    flex-direction: row; // force horizontal layout
+    flex-direction: row;
     align-items: center;
     justify-content: flex-start;
-    gap: 1rem; // spacing between items
-    flex-wrap: nowrap; // prevent line break
+    gap: 1rem;
+    flex-wrap: nowrap;
 
     select {
       min-width: 180px;

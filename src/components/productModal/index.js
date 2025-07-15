@@ -141,6 +141,22 @@ const ProductModal = ({ show, onClose, onSubmit, product, mode }) => {
                 onChange={handleChange}
               />
             </Form.Group>
+
+            {form.image && (
+              <div style={{ marginTop: "1rem", textAlign: "center" }}>
+                <img
+                  src={form.image}
+                  alt="Preview"
+                  style={{
+                    width: "180px",
+                    height: "180px",
+                    objectFit: "cover",
+                    borderRadius: "8px",
+                    border: "1px solid #ccc",
+                  }}
+                />
+              </div>
+            )}
           </>
         );
     }

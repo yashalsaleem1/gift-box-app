@@ -1,4 +1,4 @@
-import productData from "../../buyer/constants/productData";
+import { productData } from "../../../constants/index";
 import ReviewCard from "../../../components/reviewCard";
 import "./style.scss";
 

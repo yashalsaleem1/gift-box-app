@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import NavbarWrapper from "../../../layout/navbar";
 import CateCard from "../../../components/cateCard";
-import productData from "../../buyer/constants/productData";
+import { productData } from "../../../constants/index";
 import { Button, Form, Card } from "react-bootstrap";
 import { toast } from "react-toastify";
 import {
