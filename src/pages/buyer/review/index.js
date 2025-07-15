@@ -4,7 +4,7 @@ import NavScrollExample from "../../../layout/navbar";
 import CustomButton from "../../../components/button/index";
 import Form from "react-bootstrap/Form";
 import ReviewCard from "../../../components/reviewCard";
-import productData from "../../buyer/constants/productData";
+import { productData } from "../../../constants/index";
 import "./style.scss";
 
 const ReviewPage = ({ title = "Customer Reviews" }) => {

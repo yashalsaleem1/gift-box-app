@@ -1,7 +1,7 @@
 import { useState } from "react";
 import SellerReviewCard from "../../../components/sellerReviewCard";
 import NavbarWrapper from "../../../layout/navbar";
-import productData from "../../buyer/constants/productData";
+import { productData } from "../../../constants/index";
 import ProductModal from "../../../components/productModal";
 import "./style.scss";
 

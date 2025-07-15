@@ -23,7 +23,7 @@ const SellerReviewCard = ({
   return (
     <Card className="seller-review-card">
       <div className="card-header">
-        <img src={image} alt={title} className="product-image" />
+        <img src={image} alt={title} className="product-thumbnail" />
 
         <div className="product-details">
           <h5>{title}</h5>

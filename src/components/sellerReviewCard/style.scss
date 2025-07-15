@@ -10,6 +10,22 @@
   margin: 0 auto;
   padding: 1rem;
 
+  .product-thumbnail {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-right: 8px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background-color: #f4f4f4;
+
+    .product-image-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
   .customer-feedback-section {
     display: flex;
     gap: 2rem;
