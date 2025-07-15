@@ -31,9 +31,6 @@ function SellerNavbar() {
             <Nav.Link as={Link} to="/seller/stock">
               Stock Management
             </Nav.Link>
-            <Nav.Link as={Link} to="/return">
-              Return & Refund
-            </Nav.Link>
             <Nav.Link as={Link} to="/review">
               Reviews
             </Nav.Link>

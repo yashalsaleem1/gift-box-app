@@ -12,6 +12,7 @@ import ProtectedRoute from "./protectedRoute";
 import SellerReview from "../pages/seller/reviews";
 import Stock from "../pages/seller/stockManagement";
 import Products from "../pages/seller/products";
+import Exchange from "../pages/buyer/return";
 
 const routeConfig = [
   // Public routes
@@ -43,6 +44,14 @@ const routeConfig = [
     element: (
       <ProtectedRoute roles={["buyer"]}>
         <ReviewPage />
+      </ProtectedRoute>
+    ),
+  },
+  {
+    path: "/return",
+    element: (
+      <ProtectedRoute roles={["buyer"]}>
+        <Exchange />
       </ProtectedRoute>
     ),
   },
