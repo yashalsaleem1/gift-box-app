@@ -1,0 +1,259 @@
+.notfound {
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(to top, #fff0f6, #ffe4e6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Poppins", sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.sky {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 60%;
+  overflow: hidden;
+  z-index: 0;
+}
+
+/* 🎁 ENHANCED GIFT BOX */
+.gift-float {
+  width: 100px;
+  height: 100px;
+  background: #f43f5e;
+  border-radius: 12px;
+  position: absolute;
+  bottom: -120px; // start off-screen
+  left: 50%;
+  transform: translateX(-50%);
+  animation: giftDrift 10s ease-in-out forwards;
+  box-shadow: inset 0 -5px #be123c, 0 4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 100%;
+    background: gold;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    height: 10px;
+    width: 100%;
+    background: gold;
+    top: 45%;
+    left: 0;
+  }
+
+  .lid {
+    position: absolute;
+    width: 100%;
+    height: 30px;
+    background: #dc2626;
+    top: -30px;
+    border-radius: 8px 8px 0 0;
+    z-index: 3;
+    box-shadow: 0 3px 0 #991b1b;
+  }
+
+  .string {
+    position: absolute;
+    width: 2px;
+    height: 40px;
+    background: #555;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes floatGift {
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-15px);
+  }
+}
+
+/* ☁️ ENHANCED CLOUDS */
+.cloud {
+  position: absolute;
+  background: #fff;
+  border-radius: 50%;
+  opacity: 0.8;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    background: #fff;
+    border-radius: 50%;
+  }
+
+  &.cloud-1 {
+    width: 100px;
+    height: 60px;
+    top: 50px;
+    left: 10%;
+    animation: moveCloud 60s linear infinite;
+
+    &::before {
+      width: 60px;
+      height: 60px;
+      top: -20px;
+      left: 10px;
+    }
+
+    &::after {
+      width: 40px;
+      height: 40px;
+      top: 10px;
+      left: 60px;
+    }
+  }
+
+  &.cloud-2 {
+    width: 160px;
+    height: 90px;
+    top: 100px;
+    left: 60%;
+    animation: moveCloud 80s linear infinite;
+
+    &::before {
+      width: 90px;
+      height: 70px;
+      top: -10px;
+      left: -20px;
+    }
+
+    &::after {
+      width: 70px;
+      height: 60px;
+      top: 10px;
+      left: 100px;
+    }
+  }
+
+  &.cloud-3 {
+    width: 140px;
+    height: 70px;
+    top: 140px;
+    left: 30%;
+    animation: moveCloud 100s linear infinite;
+
+    &::before {
+      width: 60px;
+      height: 60px;
+      top: -15px;
+      left: 10px;
+    }
+
+    &::after {
+      width: 50px;
+      height: 50px;
+      top: 10px;
+      left: 80px;
+    }
+  }
+}
+
+@keyframes moveCloud {
+  0% {
+    transform: translateX(-200px);
+  }
+  100% {
+    transform: translateX(100vw);
+  }
+}
+
+.text {
+  z-index: 1;
+  text-align: center;
+  margin-top: 52vh;
+  color: #7f1d1d;
+
+  h1 {
+    font-size: 6rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: #9f1239;
+  }
+
+  .btn-group {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .home-button,
+  .shop-button {
+    padding: 0.75rem 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+
+  .home-button {
+    background: #f43f5e;
+    color: white;
+
+    &:hover {
+      background: #be123c;
+    }
+  }
+
+  .shop-button {
+    background: gold;
+    color: #1f2937;
+
+    &:hover {
+      background: #facc15;
+    }
+  }
+}
+
+@keyframes giftDrift {
+  0% {
+    bottom: -120px;
+    left: 50%;
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+  }
+
+  40% {
+    bottom: 40%;
+    left: 60%;
+    transform: translateX(-50%) scale(1.05);
+  }
+
+  80% {
+    bottom: 80%;
+    left: 75%;
+    transform: translateX(-50%) scale(1.1);
+  }
+
+  100% {
+    bottom: 110%;
+    left: 90%;
+    opacity: 0;
+    transform: translateX(-50%) scale(1.2);
+  }
+}
