@@ -13,6 +13,7 @@ import SellerReview from "../pages/seller/reviews";
 import Stock from "../pages/seller/stockManagement";
 import Products from "../pages/seller/products";
 import Exchange from "../pages/buyer/return";
+import NotFound404 from "../pages/notFound/index";
 
 const routeConfig = [
   // Public routes
@@ -21,6 +22,7 @@ const routeConfig = [
   { path: "/category", element: <CategoryPage /> },
   { path: "/deals", element: <DealsPage /> },
   { path: "/product/:id", element: <ItemDescription /> },
+  { path: "*", element: <NotFound404 /> },
 
   // Buyer-protected routes
   {
