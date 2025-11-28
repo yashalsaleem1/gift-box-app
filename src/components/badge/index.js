@@ -5,7 +5,7 @@ const DiscountBadge = ({ originalPrice, discountedPrice }) => {
   if (discountedPrice >= originalPrice) return null;
 
   const discount = Math.round(
-    ((originalPrice - discountedPrice) / originalPrice) * 100
+    ((originalPrice - discountedPrice) / originalPrice) * 100,
   );
 
   return <Badge className="discount-badge">{discount}% OFF</Badge>;

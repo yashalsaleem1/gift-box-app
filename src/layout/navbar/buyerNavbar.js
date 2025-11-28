@@ -60,9 +60,10 @@ function BuyerNavbar() {
 
             <Dropdown align="end">
               <Dropdown.Toggle
-                as="span"
+                as="button"
                 id="dropdown-custom-components"
-                style={{ cursor: "pointer" }}
+                aria-label="User menu"
+                className="user-dropdown-toggle"
               >
                 <IoIosContact size={22} />
               </Dropdown.Toggle>

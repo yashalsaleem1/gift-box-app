@@ -3,7 +3,7 @@ import NavbarWrapper from "../../../layout/navbar";
 import { productData } from "../../../constants";
 
 const DealsData = productData.filter(
-  (product) => product.discountedPrice < product.originalPrice
+  (product) => product.discountedPrice < product.originalPrice,
 );
 
 const DealsPage = () => {

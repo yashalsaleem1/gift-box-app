@@ -12,8 +12,8 @@ export const CartProvider = ({ children }) => {
         cart.map((item) =>
           item.id === product.id
             ? { ...item, quantity: item.quantity + 1 }
-            : item
-        )
+            : item,
+        ),
       );
     } else {
       setCart([...cart, { ...product, quantity: 1 }]);

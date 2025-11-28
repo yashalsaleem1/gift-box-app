@@ -90,7 +90,7 @@ const ReviewPage = ({ title = "Customer Reviews" }) => {
                   feedback={review.message}
                 />
               ))
-            : null
+            : null,
         )}
       </div>
     </>

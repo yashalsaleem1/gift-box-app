@@ -20,7 +20,7 @@ const renderStars = (avg) => {
         <FaStar key={i} color="#ffc107" />
       ) : (
         <FaRegStar key={i} color="#ccc" />
-      )
+      ),
     );
   }
   return stars;
@@ -40,7 +40,7 @@ const SellerReview = ({ title = "Customer Reviews" }) => {
           const reviews = product.reviews || [];
           const total = reviews.reduce(
             (acc, r) => acc + parseStarRating(r.rating),
-            0
+            0,
           );
           const avgRating = reviews.length > 0 ? total / reviews.length : 0;
 
