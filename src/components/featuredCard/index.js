@@ -51,7 +51,7 @@ function FeaturedCard({ title = "", products = [], productLink }) {
           Math.round(
             ((product.originalPrice - product.discountedPrice) /
               product.originalPrice) *
-              100
+              100,
           );
 
           return (

@@ -73,7 +73,7 @@ const Stock = () => {
   // Checkbox toggle
   const handleCheckboxChange = (id) => {
     setSelectedProducts((prev) =>
-      prev.includes(id) ? prev.filter((pid) => pid !== id) : [...prev, id]
+      prev.includes(id) ? prev.filter((pid) => pid !== id) : [...prev, id],
     );
   };
 

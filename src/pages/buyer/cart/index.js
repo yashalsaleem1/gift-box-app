@@ -16,8 +16,8 @@ const ShoppingCart = () => {
   const handleIncrease = (id) => {
     setCart((prev) =>
       prev.map((item) =>
-        item.id === id ? { ...item, quantity: item.quantity + 1 } : item
-      )
+        item.id === id ? { ...item, quantity: item.quantity + 1 } : item,
+      ),
     );
   };
 
@@ -26,8 +26,8 @@ const ShoppingCart = () => {
       prev.map((item) =>
         item.id === id && item.quantity > 1
           ? { ...item, quantity: item.quantity - 1 }
-          : item
-      )
+          : item,
+      ),
     );
   };
 
@@ -46,7 +46,7 @@ const ShoppingCart = () => {
 
   const total = cart.reduce(
     (sum, item) => sum + item.discountedPrice * item.quantity,
-    0
+    0,
   );
 
   return (

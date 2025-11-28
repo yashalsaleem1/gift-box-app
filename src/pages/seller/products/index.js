@@ -27,8 +27,8 @@ const SellerProductsPage = () => {
     ) {
       setProducts((prev) =>
         prev.map((p) =>
-          p.id === updatedProduct.id ? { ...p, ...updatedProduct } : p
-        )
+          p.id === updatedProduct.id ? { ...p, ...updatedProduct } : p,
+        ),
       );
     } else if (modalMode === "delete") {
       setProducts((prev) => prev.filter((p) => p.id !== updatedProduct.id));

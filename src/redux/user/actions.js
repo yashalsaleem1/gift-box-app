@@ -9,9 +9,9 @@ export const login = createAsyncThunk(
   "auth/login",
   async ({ email, password, role }, thunkAPI) => {
     const user = USERS.find(
-      (u) => u.email === email && u.password === password && u.role === role
+      (u) => u.email === email && u.password === password && u.role === role,
     );
     if (user) return user;
     return thunkAPI.rejectWithValue("Invalid credentials or role");
-  }
+  },
 );

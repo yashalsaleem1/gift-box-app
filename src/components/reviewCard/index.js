@@ -10,7 +10,7 @@ const renderStars = (rating) => {
         <FaStar key={i} color="#ffc107" />
       ) : (
         <FaRegStar key={i} color="#ccc" />
-      )
+      ),
     );
   }
   return stars;
