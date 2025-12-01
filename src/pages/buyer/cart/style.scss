@@ -12,27 +12,80 @@
   p {
     text-align: center;
     font-weight: 500;
-    font-size: 1.5rem;
+    font-size: 1.5rem !important;
   }
 
   .cart-card {
     background: $text-light;
     padding: 1rem 1.25rem;
     border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.253);
-    position: relative;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
     max-width: 90%;
     margin: 2rem auto;
     display: flex;
-    flex-direction: row;
     align-items: center;
-    gap: 1.5rem;
+    justify-content: space-between;
+    gap: 1rem;
 
     img {
       width: 120px;
       height: 120px;
       object-fit: cover;
       border-radius: 8px;
+    }
+
+    .cart-info {
+      flex: 1;
+      margin-left: 1rem;
+
+      h4 {
+        margin: 0 0 0.5rem 0;
+        font-size: 1.3rem !important;
+        font-weight: 600;
+      }
+
+      p {
+        margin: 0;
+        font-size: 1rem;
+        color: $primary-color;
+        font-weight: 700;
+      }
+    }
+
+    .controls-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+
+      .quantity-controls {
+        display: flex;
+        align-items: center;
+        gap: 0.3rem;
+
+        button {
+          border: 1px solid gray;
+          border-radius: 0.2rem;
+          padding: 0.25rem 0.5rem;
+          cursor: pointer;
+          background-color: #fff;
+        }
+
+        span {
+          font-weight: bold;
+          font-size: 1.2rem;
+          width: 1.5rem;
+          text-align: center;
+        }
+      }
+
+      .delete-btn {
+        background-color: $primary-color;
+        color: $text-light;
+        border: none;
+        border-radius: 4px;
+        padding: 0.25rem 0.5rem;
+        cursor: pointer;
+      }
     }
 
     .checkout-btn {
