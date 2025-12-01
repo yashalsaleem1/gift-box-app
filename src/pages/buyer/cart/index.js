@@ -6,6 +6,7 @@ import CustomButton from "../../../components/button/index";
 import NavbarWrapper from "../../../layout/navbar/index";
 import { FaTrash } from "react-icons/fa6";
 import { toast } from "react-toastify";
+import { Row, Col } from "react-bootstrap";
 import "./style.scss";
 
 const ShoppingCart = () => {
@@ -53,7 +54,7 @@ const ShoppingCart = () => {
     <>
       <NavbarWrapper />
 
-      <div className="shopping-cart-page">
+      <div className="shopping-cart-page container">
         <h2>Shopping Cart</h2>
 
         {cart.length === 0 ? (
@@ -61,36 +62,57 @@ const ShoppingCart = () => {
         ) : (
           <>
             {cart.map((item) => (
-              <div key={item.id} className="cart-card">
-                <img src={item.image} alt={item.title} />
-                <div className="cart-info">
+              <Row key={item.id} className="cart-card align-items-center mb-3">
+                <Col xs={12} sm={4} md={3}>
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="img-fluid"
+                  />
+                </Col>
+
+                <Col xs={12} sm={5} md={6} className="cart-info">
                   <h4>{item.title}</h4>
                   <p className="price">${item.discountedPrice.toFixed(2)}</p>
-                </div>
-                <div className="quantity-controls">
-                  <button onClick={() => handleDecrease(item.id)}>-</button>
-                  <span>{item.quantity}</span>
-                  <button onClick={() => handleIncrease(item.id)}>+</button>
-                </div>
-                <button
-                  className="delete-btn"
-                  onClick={() => handleDelete(item.id)}
+                </Col>
+
+                <Col
+                  xs={12}
+                  sm={3}
+                  md={3}
+                  className="d-flex align-items-center justify-content-end"
                 >
-                  <FaTrash />
-                </button>
-              </div>
+                  <div className="controls-wrapper d-flex align-items-center gap-2">
+                    <div className="quantity-controls d-flex align-items-center gap-1">
+                      <button onClick={() => handleDecrease(item.id)}>-</button>
+                      <span>{item.quantity}</span>
+                      <button onClick={() => handleIncrease(item.id)}>+</button>
+                    </div>
+                    <button
+                      className="delete-btn"
+                      onClick={() => handleDelete(item.id)}
+                    >
+                      <FaTrash />
+                    </button>
+                  </div>
+                </Col>
+              </Row>
             ))}
 
-            <div className="cart-card">
-              <h3>Total: ${total.toFixed(2)}</h3>
-              <CustomButton
-                variant="solid"
-                className="checkout-btn"
-                onClick={handleCheckout}
-              >
-                Proceed to Checkout →
-              </CustomButton>
-            </div>
+            <Row className="cart-card align-items-center justify-content-between mt-4">
+              <Col xs={12} md="auto">
+                <h3>Total: ${total.toFixed(2)}</h3>
+              </Col>
+              <Col xs={12} md="auto" className="mt-2 mt-md-0">
+                <CustomButton
+                  variant="solid"
+                  className="checkout-btn"
+                  onClick={handleCheckout}
+                >
+                  Proceed to Checkout →
+                </CustomButton>
+              </Col>
+            </Row>
           </>
         )}
       </div>
