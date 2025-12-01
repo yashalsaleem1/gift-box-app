@@ -6,12 +6,13 @@
   padding: 4rem 2rem;
   min-height: 100vh;
   display: flex;
-  align-items: left;
-  justify-content: left;
+  align-items: flex-start;
+  justify-content: center;
 
   .return-policy-box {
-    background: rgba(255, 255, 255, 0.92);
-    max-width: 60%;
+    background: rgba(255, 255, 255, 0.377);
+    width: 100%;
+    max-width: 100%;
     padding: 2.5rem;
     border-radius: 1rem;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
@@ -51,12 +52,47 @@
           margin: 0.5rem 0;
           font-size: 1.2rem;
           color: #333;
+          display: flex;
+          align-items: center;
         }
 
         p {
           font-size: 0.95rem;
           white-space: pre-line;
           color: #444;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 425px) {
+    padding: 2rem 1rem;
+
+    .return-policy-box {
+      max-width: 95%;
+      padding: 1.5rem;
+
+      h1 {
+        font-size: 1.6rem;
+      }
+
+      .subtitle {
+        font-size: 0.95rem;
+      }
+
+      .policy-sections {
+        gap: 1rem;
+
+        .policy-card {
+          padding: 0.8rem 1rem;
+
+          h3 {
+            font-size: 1rem;
+          }
+
+          p {
+            font-size: 0.9rem;
+          }
         }
       }
     }
