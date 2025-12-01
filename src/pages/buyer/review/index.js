@@ -5,6 +5,8 @@ import CustomButton from "../../../components/button/index";
 import Form from "react-bootstrap/Form";
 import ReviewCard from "../../../components/reviewCard";
 import { productData } from "../../../constants/index";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 import "./style.scss";
 
 const ReviewPage = ({ title = "Customer Reviews" }) => {
@@ -26,52 +28,62 @@ const ReviewPage = ({ title = "Customer Reviews" }) => {
     <>
       <NavScrollExample />
 
-      <div className="review-form-container">
-        <h2 className="section-heading">{title}</h2>
+      <div className="review-form-container container py-4">
+        <h2 className="section-heading mb-4">{title}</h2>
 
         <Form>
-          <Form.Group controlId="product-select">
-            <Form.Label>Product</Form.Label>
-            <Form.Select
-              value={selectedProduct}
-              onChange={(e) => setSelectedProduct(e.target.value)}
-            >
-              <option value="">Select a product</option>
-              {productData.map((product, idx) => (
-                <option key={idx} value={product.title}>
-                  {product.title}
-                </option>
-              ))}
-            </Form.Select>
-          </Form.Group>
+          <Row className="g-3">
+            <Col xs={12} sm={6} md={6} lg={6}>
+              <Form.Group controlId="product-select">
+                <Form.Label>Product</Form.Label>
+                <Form.Select
+                  value={selectedProduct}
+                  onChange={(e) => setSelectedProduct(e.target.value)}
+                >
+                  <option value="">Select a product</option>
+                  {productData.map((product, idx) => (
+                    <option key={idx} value={product.title}>
+                      {product.title}
+                    </option>
+                  ))}
+                </Form.Select>
+              </Form.Group>
+            </Col>
 
-          <Form.Group controlId="rating-select" className="mt-3">
-            <Form.Label>Rating</Form.Label>
-            <Form.Select
-              value={selectedRating}
-              onChange={(e) => setSelectedRating(e.target.value)}
-            >
-              <option value="">Select rating</option>
-              <option>★★★★★ (5 stars)</option>
-              <option>★★★★☆ (4 stars)</option>
-              <option>★★★☆☆ (3 stars)</option>
-              <option>★★☆☆☆ (2 stars)</option>
-              <option>★☆☆☆☆ (1 star)</option>
-            </Form.Select>
-          </Form.Group>
+            <Col xs={12} sm={6} md={6} lg={6}>
+              <Form.Group controlId="rating-select">
+                <Form.Label>Rating</Form.Label>
+                <Form.Select
+                  value={selectedRating}
+                  onChange={(e) => setSelectedRating(e.target.value)}
+                >
+                  <option value="">Select rating</option>
+                  <option>★★★★★ (5 stars)</option>
+                  <option>★★★★☆ (4 stars)</option>
+                  <option>★★★☆☆ (3 stars)</option>
+                  <option>★★☆☆☆ (2 stars)</option>
+                  <option>★☆☆☆☆ (1 star)</option>
+                </Form.Select>
+              </Form.Group>
+            </Col>
 
-          <Form.Group controlId="review-textarea" className="mt-3">
-            <Form.Label>Your Review</Form.Label>
-            <Form.Control
-              as="textarea"
-              rows={3}
-              placeholder="Write your thoughts..."
-              value={reviewText}
-              onChange={(e) => setReviewText(e.target.value)}
-            />
-          </Form.Group>
+            <Col xs={12}>
+              <Form.Group controlId="review-textarea">
+                <Form.Label>Your Review</Form.Label>
+                <Form.Control
+                  as="textarea"
+                  rows={3}
+                  placeholder="Write your thoughts..."
+                  value={reviewText}
+                  onChange={(e) => setReviewText(e.target.value)}
+                />
+              </Form.Group>
+            </Col>
 
-          <CustomButton className="add-btn mt-4">Submit Review</CustomButton>
+            <Col xs={12} className="d-flex justify-content-start mt-2">
+              <CustomButton className="add-btn">Submit Review</CustomButton>
+            </Col>
+          </Row>
         </Form>
       </div>
 
