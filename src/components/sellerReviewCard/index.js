@@ -21,30 +21,40 @@ const SellerReviewCard = ({
   } = product;
 
   return (
-    <Card className="seller-review-card">
-      <div className="card-header">
-        <img src={image} alt={title} className="product-thumbnail" />
+    <Card className="seller-review-card container-fluid">
+      <div className="row align-items-center">
+        <div className="col-12 col-sm-4 col-md-3 text-center mb-3 mb-sm-0">
+          <img
+            src={image}
+            alt={title}
+            className="product-thumbnail img-fluid"
+          />
+        </div>
 
-        <div className="product-details">
-          <h5>{title}</h5>
-          <p className="price">
+        <div className="col-12 col-sm-5 col-md-6 mb-3 mb-sm-0">
+          <h5 className="mb-1">{title}</h5>
+
+          <p className="price mb-1">
             ${discountedPrice}{" "}
             <DiscountBadge
               originalPrice={originalPrice}
               discountedPrice={discountedPrice}
             />
           </p>
-          <p>Category: {category}</p>
-          <p>
+
+          <p className="mb-1">Category: {category}</p>
+
+          <p className="mb-1">
             Stock:{" "}
             <span className={stock > 0 ? "in-stock" : "out-of-stock"}>
               {stock} units ({stock > 0 ? "In Stock" : "Out of Stock"})
             </span>
           </p>
-          <p>⭐ {Array.isArray(reviews) ? reviews.length : 0} review(s)</p>
+
+          <p className="mb-0">⭐ {reviews.length} review(s)</p>
         </div>
 
-        <div className="action-buttons">
+        <div className="col-12 col-sm-3 col-md-3 d-flex flex-sm-column gap-2 action-buttons">
           <button className="btn-edit" onClick={() => onEdit(product)}>
             Edit
           </button>
@@ -53,7 +63,6 @@ const SellerReviewCard = ({
           </button>
           <button
             className="btn-yellow"
-            size="sm"
             onClick={() => onDiscountUpdate(product)}
           >
             Discount
@@ -64,20 +73,19 @@ const SellerReviewCard = ({
         </div>
       </div>
 
-      <div className="customer-feedback-section">
-        <div className="left-column">
-          <h6>Customer Feedback ({reviews.length})</h6>
-          {reviews.map((rev, idx) => (
-            <ReviewCard
-              className="review-card"
-              key={idx}
-              rating={rev.rating}
-              name={rev.name}
-              date={rev.date}
-              feedback={rev.message}
-            />
-          ))}
-        </div>
+      <div className="customer-feedback-section mt-4">
+        <h6 className="mb-3">Customer Feedback ({reviews.length})</h6>
+
+        {reviews.map((rev, idx) => (
+          <ReviewCard
+            key={idx}
+            className="review-card"
+            rating={rev.rating}
+            name={rev.name}
+            date={rev.date}
+            feedback={rev.message}
+          />
+        ))}
       </div>
     </Card>
   );
