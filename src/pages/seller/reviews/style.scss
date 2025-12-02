@@ -2,33 +2,20 @@
 
 .page-header {
   .page-title {
-    text-align: center;
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: 700;
-    color: #333333;
-    margin-top: 2rem;
-  }
-
-  .add-btn {
-    width: 100%;
-    font-weight: $font-semibold;
-    background-color: $primary-color;
-    color: $text-light;
-  }
-}
-
-.review-section-container {
-  .review-section-title {
-    margin: 2rem 0 1rem 5rem;
+    color: #333;
   }
 }
 
 .review-overview-card {
-  margin: 1rem 5rem;
-  padding: 1rem 1.5rem;
-  border: 1px solid #eee;
-  border-radius: 10px;
   background: #fafafa;
+  border-radius: 10px;
+  border: 1px solid #eee;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 0.5rem;
 
   h5 {
     font-weight: 600;
@@ -37,7 +24,6 @@
 
   .avg-stars {
     font-size: 1rem;
-    margin: 0.5rem 0;
     color: $cate-heading;
     display: flex;
     gap: 4px;
