@@ -30,49 +30,62 @@ const Login = () => {
   };
 
   return (
-    <div className="login-form-container" style={{ "--bg-url": `url(${bg})` }}>
-      <div className="login-content">
-        <h2 className="section-heading">Login</h2>
-        <form onSubmit={handleSubmit}>
-          <div className="custom-button-group">
-            <CustomButton
-              className={`custom-btn ${role === "buyer" ? "active-btn" : ""}`}
-              icon={FaBagShopping}
-              variant="solid"
-              onClick={() => setRole("buyer")}
-            >
-              Buyer
-            </CustomButton>
-            <CustomButton
-              className={`custom-btn ${role === "seller" ? "active-btn" : ""}`}
-              icon={FaShop}
-              variant="outline"
-              onClick={() => setRole("seller")}
-            >
-              Seller
-            </CustomButton>
+    <div
+      className="login-form-container d-flex align-items-center"
+      style={{ "--bg-url": `url(${bg})` }}
+    >
+      <div className="container">
+        <div className="row">
+          <div className="col-12 col-md-6 col-lg-4">
+            <div className="login-content">
+              <h2 className="section-heading">Login</h2>
+
+              <form onSubmit={handleSubmit}>
+                <div className="custom-button-group">
+                  <CustomButton
+                    className={`custom-btn ${role === "buyer" ? "active-btn" : ""}`}
+                    icon={FaBagShopping}
+                    variant="solid"
+                    onClick={() => setRole("buyer")}
+                  >
+                    Buyer
+                  </CustomButton>
+
+                  <CustomButton
+                    className={`custom-btn ${role === "seller" ? "active-btn" : ""}`}
+                    icon={FaShop}
+                    variant="outline"
+                    onClick={() => setRole("seller")}
+                  >
+                    Seller
+                  </CustomButton>
+                </div>
+
+                <input
+                  className="input-section"
+                  type="email"
+                  placeholder="Email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+
+                <input
+                  className="input-section"
+                  type="password"
+                  placeholder="Password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+
+                <button type="submit" className="login-btn" disabled={loading}>
+                  Login
+                </button>
+
+                {error && <p className="error-text">{error}</p>}
+              </form>
+            </div>
           </div>
-
-          <input
-            className="input-section"
-            type="email"
-            placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <input
-            className="input-section"
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-
-          <button type="submit" className="login-btn" disabled={loading}>
-            Login
-          </button>
-          {error && <p className="error-text">{error}</p>}
-        </form>
+        </div>
       </div>
     </div>
   );
