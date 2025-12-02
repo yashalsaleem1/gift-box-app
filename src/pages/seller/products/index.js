@@ -65,84 +65,98 @@ const SellerProductsPage = () => {
   return (
     <div>
       <NavbarWrapper />
+
       <div className="page-header">
         <h2 className="page-title">My Products & Customer Feedback</h2>
       </div>
 
-      <div className="filter-card">
-        <h5 className="filter-title">Filter Products</h5>
-        <div className="filter-row">
-          <select
-            className="form-select"
-            value={categoryFilter}
-            onChange={(e) => setCategoryFilter(e.target.value)}
-          >
-            {categories.map((cat, i) => (
-              <option key={i}>{cat}</option>
-            ))}
-          </select>
+      <div className="container mt-4">
+        <div className="filter-card">
+          <h5 className="filter-title">Filter Products</h5>
 
-          <select
-            className="form-select"
-            value={stockFilter}
-            onChange={(e) => setStockFilter(e.target.value)}
-          >
-            <option>All Stock</option>
-            <option>In Stock</option>
-            <option>Out of Stock</option>
-            <option>Low Stock</option>
-          </select>
+          <div className="row g-3 align-items-center">
+            {/* Categories */}
+            <div className="col-12 col-md-6 col-lg-auto">
+              <select
+                className="form-select"
+                value={categoryFilter}
+                onChange={(e) => setCategoryFilter(e.target.value)}
+              >
+                {categories.map((cat, i) => (
+                  <option key={i}>{cat}</option>
+                ))}
+              </select>
+            </div>
 
-          <select
-            className="form-select"
-            value={discountFilter}
-            onChange={(e) => setDiscountFilter(e.target.value)}
-          >
-            <option>All Products</option>
-            <option>No Discount</option>
-            <option>Discount</option>
-          </select>
+            <div className="col-12 col-md-6 col-lg-auto">
+              <select
+                className="form-select"
+                value={stockFilter}
+                onChange={(e) => setStockFilter(e.target.value)}
+              >
+                <option>All Stock</option>
+                <option>In Stock</option>
+                <option>Out of Stock</option>
+                <option>Low Stock</option>
+              </select>
+            </div>
 
-          <button
-            className="btn btn-warning add-product-btn"
-            onClick={() => {
-              setEditingProduct(null);
-              setModalMode("add");
-              setShowModal(true);
-            }}
-          >
-            + Add New Product
-          </button>
+            <div className="col-12 col-md-6 col-lg-auto">
+              <select
+                className="form-select"
+                value={discountFilter}
+                onChange={(e) => setDiscountFilter(e.target.value)}
+              >
+                <option>All Products</option>
+                <option>No Discount</option>
+                <option>Discount</option>
+              </select>
+            </div>
+
+            <div className="col-12 col-md-6 col-lg-auto">
+              <button
+                className="btn btn-warning add-product-btn w-100"
+                onClick={() => {
+                  setEditingProduct(null);
+                  setModalMode("add");
+                  setShowModal(true);
+                }}
+              >
+                + Add New Product
+              </button>
+            </div>
+          </div>
         </div>
-      </div>
 
-      <div className="product-cards-wrapper">
-        {filteredProducts.map((product, i) => (
-          <SellerReviewCard
-            key={i}
-            product={product}
-            onEdit={(p) => {
-              setEditingProduct(p);
-              setModalMode("edit");
-              setShowModal(true);
-            }}
-            onStockUpdate={(p) => {
-              setEditingProduct(p);
-              setModalMode("editStock");
-              setShowModal(true);
-            }}
-            onDiscountUpdate={(p) => {
-              setEditingProduct(p);
-              setModalMode("editDiscount");
-              setShowModal(true);
-            }}
-            onDelete={(p) => {
-              setEditingProduct(p);
-              setModalMode("delete");
-              setShowModal(true);
-            }}
-          />
-        ))}
+        <div className="row justify-content-center">
+          {filteredProducts.map((product, i) => (
+            <div key={i} className="col-12 mb-4">
+              <SellerReviewCard
+                product={product}
+                onEdit={(p) => {
+                  setEditingProduct(p);
+                  setModalMode("edit");
+                  setShowModal(true);
+                }}
+                onStockUpdate={(p) => {
+                  setEditingProduct(p);
+                  setModalMode("editStock");
+                  setShowModal(true);
+                }}
+                onDiscountUpdate={(p) => {
+                  setEditingProduct(p);
+                  setModalMode("editDiscount");
+                  setShowModal(true);
+                }}
+                onDelete={(p) => {
+                  setEditingProduct(p);
+                  setModalMode("delete");
+                  setShowModal(true);
+                }}
+              />
+            </div>
+          ))}
+        </div>
       </div>
 
       <ProductModal
